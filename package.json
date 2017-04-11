@@ -1,0 +1,25 @@
+{
+  "name": "ehl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrEdwinRodriguez/ehl.git"
+  },
+  "author": "Edwin Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrEdwinRodriguez/ehl/issues"
+  },
+  "homepage": "https://github.com/MrEdwinRodriguez/ehl#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.4"
+  }
+}
