@@ -3,10 +3,21 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 
+//sequelize looks for models
+var models = require('./api/models')
+
+var sequelizeConnection = models.sequelize;
+sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
+    // this syncs our tables
+    .then(function() {
+        return sequelizeConnection.sync({force:true})
+    })
+
 
 app.set('port', 8000);
 
-// middleware that logs out methods and urls
+
+// logs activity methods and url's
 app.use(function(req, res, next) {
     console.log(req.method, req.url)
     next();
