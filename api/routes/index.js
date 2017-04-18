@@ -23,6 +23,11 @@ router
     .route('/clients/:clientId')
     .get(clientCtrl.clientsGetOne);   
 
+// create events
+router
+    .route('/events/create')
+    .post(eventsCtrl.createEvent);
+
 //get events
 router
     .route('/events')
@@ -30,7 +35,12 @@ router
 
 router
     .route('/events/:eventsId')
-    .get(eventsCtrl.eventsGetOne);     
+    .get(eventsCtrl.eventsGetOne); 
+
+router
+    .route('/clients/:clientID/events')
+    .get(eventsCtrl.eventsClientGetAll); 
+
 
 router
     .route('/clients/:clientID/events/:eventId')
