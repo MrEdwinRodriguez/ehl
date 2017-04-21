@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
     password: {
-            type: Sequelize.CHAR(30),
+            type: Sequelize.CHAR(255),
             allowNull: false
         },
     bank_account: {

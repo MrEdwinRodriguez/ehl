@@ -4,6 +4,8 @@ var path = require('path');
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
 var routes = require('./api/routes');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 
 //sequelize looks for models
 var models = require('./api/models')
@@ -28,8 +30,16 @@ app.use(function(req, res, next) {
 
 // looks to the public folder for index.html
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(session({
+    secret: 'app',
+    resave: true,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+}));
 
 
 app.use('/api', routes);

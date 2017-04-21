@@ -12,9 +12,9 @@ router
     .post(clientCtrl.register);
 
 // //client login
-// router
-//     .route('/client/login')
-//     .post(clientCtrl.login); 
+router
+    .route('/client/login')
+    .post(clientCtrl.login); 
 
 // //get clients
 // router
