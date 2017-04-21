@@ -1,7 +1,9 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var mysql = require('mysql');
 var bodyParser = require('body-parser');
+var routes = require('./api/routes');
 
 //sequelize looks for models
 var models = require('./api/models')
@@ -13,7 +15,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
         return sequelizeConnection.sync({force:true})
     })
 
-
+ 
 app.set('port', 8000);
 
 
@@ -30,6 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
+app.use('/api', routes);
 
 
 var server = app.listen(app.get('port'), function() {

@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
     event_time: {
-            type: Sequelize.DATE,
+            type: Sequelize.CHAR(30),
             allowNull: false
         },
     event_venue: {

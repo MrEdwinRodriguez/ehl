@@ -68,7 +68,7 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: true
         },
     expiration: {
-            type: Sequelize.DATE,
+            type: Sequelize.CHAR(30),
             allowNull: true
         },
     cvc: {

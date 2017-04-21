@@ -1,9 +1,10 @@
 var mysql= require('mysql');
 var models = require('../models');
 
-
+console.log('controller')
 module.exports.register = function(req, res){
 	console.log('client being registered')
+	
 	    var password = req.body.password;
 
     return models.Clients.create({
@@ -50,5 +51,8 @@ module.exports.clientsGetAll = function(req, res){
 module.exports.clientsGetOne = function(req, res){
 	console.log('view one client')
 
+    res
+        .status(202)
+        .json({"hello": "world"})
 
 }

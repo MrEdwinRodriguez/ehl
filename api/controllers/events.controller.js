@@ -2,6 +2,7 @@ var mysql= require('mysql');
 var models = require('../models');
 
 
+
 module.exports.createEvent = function(req, res){
 	console.log('create events')
 	console.log(req.body)
@@ -13,8 +14,11 @@ module.exports.createEvent = function(req, res){
 //all evetents associated with client
 module.exports.eventsClientGetAll = function(req, res){
 	console.log('view all client events')
-	console.log(req.body)
+	
 
+    res
+        .status(202)
+        .json({"events": "controller"})
 
 }
 
@@ -28,8 +32,10 @@ module.exports.eventsClientGetOne = function(req, res){
 //view all events in DB
 module.exports.eventsGetAll = function(req, res){
 	console.log('view all events')
-	console.log(req.body)
-
+	
+    res
+        .status(202)
+        .json({"events": "controller"})
 
 }
 
