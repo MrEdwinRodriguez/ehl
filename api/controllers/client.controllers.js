@@ -45,7 +45,7 @@ module.exports.login = function(req, res) {
                 where: { email: user_email }
 
             }).then(function(client) {
-                    console.log(client)
+                    // console.log(client)
                     console.log('.then after login')
 
                     if (client === null) {
@@ -53,9 +53,12 @@ module.exports.login = function(req, res) {
                         res
                             .status(404)
                             .redirect('/')
-                    } else {
+                    } 
 
-                        bcrypt.compare(req.body.user_password, client.password, function(err, result) {
+
+                        bcrypt.compare(req.body.password, client.password, function(err, result) {
+
+                            console.log('result: ' + result)
 
                                 if (result == true) {
                                     console.log("password is correct")
@@ -72,13 +75,14 @@ module.exports.login = function(req, res) {
                                     res.redirect('/')
                                 }
 
-                            }
+                            })
 
 
-                        })
+                        
 
 
-                }
+                })
+            }
 
                 module.exports.clientsGetAll = function(req, res) {
                     console.log('view all clients')

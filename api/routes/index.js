@@ -49,7 +49,12 @@ router
 //     .route('/clients/:clientID/events/:eventId')
 //     .get(eventsCtrl.eventsClientGetOne);    
 
-//get patrons
+//patrion login
+router
+    .route('/patrons/register')
+    .post(patronsCtrl.register);
+
+ //get patrons
 // router
 //     .route('/patrons')
 //     .get(patronsCtrl.patronsGetAll);        
