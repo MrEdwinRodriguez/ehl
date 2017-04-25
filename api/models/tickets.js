@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         Tickets.belongsTo(models.Patrons);
-        Tickets.belongsTo(models.Clients);
+        Tickets.belongsTo(models.Events);
       }
     }
   });

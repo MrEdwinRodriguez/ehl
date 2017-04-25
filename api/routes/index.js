@@ -4,7 +4,7 @@ var router = express.Router();
 var eventsCtrl = require('../controllers/events.controller.js');
 var clientCtrl = require('../controllers/client.controllers.js');
 var patronsCtrl = require('../controllers/patrons.controller.js');
-
+var ticketsCtrl = require('../controllers/tickets.controller.js');
  
 //register client
 router
@@ -65,7 +65,20 @@ router
 
 // router
 //     .route('/clients/:clientId/events/:eventId/patrons/:patronId')
-//     .get(patronsCtrl.patronsGetOne);    
+//     .get(patronsCtrl.patronsGetOne); 
+
+ //get tickets
+router
+    .route('/tickets')
+    .get(ticketsCtrl.ticketsGetAll);
+
+router
+    .route('/tickets/:ticketId')
+    .get(ticketsCtrl.ticketsGetOne);    
+
+router
+    .route('/events/:eventId/tickets')
+    .get(ticketsCtrl.ticketsForEvent);   
 
 
 module.exports = router;
