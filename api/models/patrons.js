@@ -19,10 +19,6 @@ module.exports = function(sequelize, DataTypes) {
             type: Sequelize.CHAR(255),
             allowNull: false
         },
-    ticket_number: {
-            type: Sequelize.CHAR(255),
-            allowNull: false
-        },
     address: {
             type: Sequelize.CHAR(255),
             allowNull: true
@@ -54,7 +50,8 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Patrons.belongsTo(models.Events);
+        Patrons.hasMany(models.Tickets);
       }
     }
   });

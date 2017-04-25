@@ -37,64 +37,68 @@ module.exports.register = function(req, res) {
 
 
 module.exports.login = function(req, res) {
-        console.log('client loggin in')
+    console.log('client loggin in')
 
-        var user_email = req.body.email;
+    var user_email = req.body.email;
 
-        return models.Clients.findOne({
-                where: { email: user_email }
+    return models.Clients.findOne({
+        where: { email: user_email }
 
-            }).then(function(client) {
-                    // console.log(client)
-                    console.log('.then after login')
+    }).then(function(client) {
+        // console.log(client)
+        console.log('.then after login')
 
-                    if (client === null) {
-                        console.log('email not found')
-                        res
-                            .status(404)
-                            .redirect('/')
-                    } 
-
-
-                        bcrypt.compare(req.body.password, client.password, function(err, result) {
-
-                            console.log('result: ' + result)
-
-                                if (result == true) {
-                                    console.log("password is correct")
-
-                                    req.session.logged_in = true;
-                                    req.session.holder_id = client.id;
-                                    req.session.first_name = client.first_name;
-                                    req.session.last_name = client.last_name;
-                                    req.session.user_email = client.email;
+        if (client === null) {
+            console.log('email not found')
+            res
+                .status(404)
+                .redirect('/')
+        }
 
 
-                                } else {
-                                    console.log('password incorrect')
-                                    res.redirect('/')
-                                }
+        bcrypt.compare(req.body.password, client.password, function(err, result) {
 
-                            })
+            console.log('result: ' + result)
+
+            if (result == true) {
+                console.log("password is correct")
+
+                req.session.logged_in = true;
+                req.session.holder_id = client.id;
+                req.session.first_name = client.first_name;
+                req.session.last_name = client.last_name;
+                req.session.user_email = client.email;
 
 
-                        
-
-
-                })
+            } else {
+                console.log('password incorrect')
+                res.redirect('/')
             }
 
-                module.exports.clientsGetAll = function(req, res) {
-                    console.log('view all clients')
+        })
 
 
-                }
 
-                module.exports.clientsGetOne = function(req, res) {
-                    console.log('view one client')
 
-                    res
-                        .status(202)
-                        .json({ "hello": "world" })
 
-                }
+    })
+}
+
+module.exports.clientsGetAll = function(req, res) {
+    console.log('view all clients')
+
+
+    res
+        .status(202)
+        .json({ "hello": "world" })
+
+}
+
+module.exports.clientsGetOne = function(req, res) {
+    console.log('view one client')
+
+    res
+        .status(202)
+        .json({ "hello": "world" })
+
+}

@@ -75,7 +75,9 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Events.hasMany(models.Patrons);
+        Events.belongsTo(models.Clients)
+
       }
     }
   });
