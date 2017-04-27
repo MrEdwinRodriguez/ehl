@@ -8,7 +8,7 @@ var ticketsCtrl = require('../controllers/tickets.controller.js');
  
 //register client
 router
-    .route('/client/register')
+    .route('/client/signup')
     .post(clientCtrl.register);
 
 // //client login

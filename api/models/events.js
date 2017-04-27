@@ -77,7 +77,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         Events.hasMany(models.Patrons);
         Events.belongsTo(models.Clients)
-
+        Events.hasMany(models.Tickets);
       }
     }
   });

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Event Horizon Live</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="author" content="Edwin Rodriguez">
+    <meta name="description" content="Event Horizon Live">
+    <meta name="keywords" content="events, tickets, purchase, live">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="header"><a href="index.html" id="headerLink"><h1>Events Horizon Live</h1></a></div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class='container'>
+            <div class="col-xs-12 col-md-12">
+                <div id='loginLogoHolder'>
+                    <img src="./images/logowtext.png" alt="Event logo" id='loginLogo'>
+                </div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div>
+                        <div class="login-screen">
+                            <form method='post' action="/api/client/signup">
+                                <div class="login-form">
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" placeholder="First Name" id="first_name" name='first_name' required> </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" placeholder="Last Name" id="last_name" name='last_name' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="email" class="login-field" placeholder="email" id="email" name='email' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="password" class="login-field" placeholder="Password" id="password" name='password' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="tel" class="login-field" placeholder="Phone Number" id="phone_number" name='phone_number' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" placeholder="Question" id="question" name='question' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" placeholder="Answer" id="answer" name='answer' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="tel" class="login-field" placeholder="Address" id="address" name='address' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" placeholder="City" id="city" name='city' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" placeholder="State" id="state" name='state' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" placeholder="Zip" id="zipcode" name='zipcode' required>
+                                    </div>                                    
+                                    <button class="btn btn-primary btn-large btn-block" href="client.html" type='submit'>login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="wrapperFooter">
+            <div class="footer">Copyright @ EHL 2017</div>
+        </div>
+    </footer>
+</body>
+<script src="assets/javascript/jquery-3.1.1.min"></script>
+<script src="assets/javascript/bootstrap.min.js"></script>
+<script src="assets/javascript/script.js"></script>
+
+</html>

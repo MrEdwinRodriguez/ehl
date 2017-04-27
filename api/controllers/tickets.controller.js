@@ -4,7 +4,8 @@ var models = require('../models');
 module.exports.ticketsForEvent = function(req, res) {
   console.log('tickets for event')
 
-    var eventId = req.params.userId;
+    // var eventId = req.params.userId;
+    var eventId = 1;
 
     return models.Tickets.findAll({
         where: {
@@ -12,19 +13,16 @@ module.exports.ticketsForEvent = function(req, res) {
         },
         include: [{
         	model: models.Events,
-            model: models.Patrons,
-        }],
+            model: models.Patrons
+        }]
     }).then(function(tix) {
 
-
-
+        console.log(tix)
 
         res
             .status(202)
-            .json({ "hello": "world" })
-
+            .send(tix)
     })
-
 }
 
 module.exports.ticketsGetAll = function(req, res) {
