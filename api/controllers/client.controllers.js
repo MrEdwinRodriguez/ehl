@@ -39,7 +39,9 @@ module.exports.register = function(req, res) {
 module.exports.login = function(req, res) {
     console.log('client loggin in')
 
-    var user_email = req.body.email;
+    var user_email = 'mredwinrodriguez@gmail.com';
+    console.log(user_email)
+    // var password
 
     return models.Clients.findOne({
         where: { email: user_email }
@@ -56,7 +58,7 @@ module.exports.login = function(req, res) {
         }
 
 
-        bcrypt.compare(req.body.password, client.password, function(err, result) {
+        bcrypt.compare('password', client.password, function(err, result) {
 
             console.log('result: ' + result)
 
