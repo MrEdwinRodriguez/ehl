@@ -25,15 +25,16 @@ router
     .route('/clients/:clientId')
     .get(clientCtrl.clientsGetOne);   
 
-// // create events
-// router
-//     .route('/events/create')
-//     .post(eventsCtrl.createEvent);
+
 
 //get events
 router
     .route('/events')
     .get(eventsCtrl.eventsGetAll);
+
+router
+    .route('/events/create')
+    .post(eventsCtrl.createEvent);    
 
 
 // router

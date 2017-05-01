@@ -38,7 +38,6 @@ module.exports.register = function(req, res) {
 
 module.exports.login = function(req, res) {
     console.log('client loggin in')
-    console.log(req)
 
     var user_email = req.body.user_email;
     var password = req.body.user_password;
@@ -81,10 +80,6 @@ module.exports.login = function(req, res) {
 
         })
 
-
-
-
-
     })
 }
 
@@ -97,6 +92,7 @@ module.exports.clientsGetAll = function(req, res) {
         .json({ "hello": "world" })
 
 }
+
 
 module.exports.clientsGetOne = function(req, res) {
     console.log('view one client')

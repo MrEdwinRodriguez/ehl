@@ -7,6 +7,34 @@ module.exports.createEvent = function(req, res){
 	console.log('create events')
 	console.log(req.body)
 
+  return models.Events.create({
+        event_name: req.body.event_name,
+        event_date: req.body.event_date,
+        event_time: req.body.event_time,
+        event_venue: req.body.venue,
+        event_address: req.body.address,
+        event_city: req.body.event_city,
+        event_state: req.body.event_state,
+        event_zip: req.body.zipcode,
+        event_contact_phone: req.body.event_contact_phone_number,
+        event_contact_email: req.body.event_contact_email,
+        event_description: req.body.description,
+        event_website: req.body.website,
+        online_price: req.body.online_price,
+        door_price: req.body.door_price,
+        ticket_sales_start: req.body.tickets_start,
+        ticket_sales_end: req.body.tickets_end,
+        ticket_allotment: req.body.allotment
+
+    })
+
+    res
+        .status(200)
+        .json(req.body)
+
+
+
+
 
 }
 
