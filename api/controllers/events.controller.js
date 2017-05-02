@@ -6,6 +6,7 @@ var models = require('../models');
 module.exports.createEvent = function(req, res){
 	console.log('create events')
 	console.log(req.body)
+	console.log("id: " +req.session.client_id)
 
   return models.Events.create({
         event_name: req.body.event_name,
@@ -24,7 +25,8 @@ module.exports.createEvent = function(req, res){
         door_price: req.body.door_price,
         ticket_sales_start: req.body.tickets_start,
         ticket_sales_end: req.body.tickets_end,
-        ticket_allotment: req.body.allotment
+        ticket_allotment: req.body.allotment,
+        ClientId: req.session.client_id
 
     })
 
@@ -42,11 +44,30 @@ module.exports.createEvent = function(req, res){
 //all evetents associated with client
 module.exports.eventsClientGetAll = function(req, res){
 	console.log('view all client events')
-	
+
+        var clientId = req.params.clientId;
+        console.log(clientId)
+         
+
+        return models.Events.findAll({
+        where: {
+            ClientId: clientId,
+        },
+        include: [{
+            model: models.Clients
+           
+        }],
+    }).then(function(data) {
 
     res
         .status(202)
-        .json({"events": "controller"})
+        .json(data)
+    
+
+    })
+	
+
+
 
 }
 

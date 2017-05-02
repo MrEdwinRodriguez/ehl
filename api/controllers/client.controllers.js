@@ -67,7 +67,7 @@ module.exports.login = function(req, res) {
                 console.log("password is correct")
 
                 req.session.logged_in = true;
-                req.session.holder_id = client.id;
+                req.session.client_id = client.id;
                 req.session.first_name = client.first_name;
                 req.session.last_name = client.last_name;
                 req.session.user_email = client.email;
@@ -83,9 +83,11 @@ module.exports.login = function(req, res) {
     })
 }
 
+
+
+
 module.exports.clientsGetAll = function(req, res) {
     console.log('view all clients')
-
 
     res
         .status(202)

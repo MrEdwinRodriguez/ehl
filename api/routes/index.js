@@ -41,9 +41,9 @@ router
 //     .route('/events/:eventsId')
 //     .get(eventsCtrl.eventsGetOne); 
 
-// router
-//     .route('/clients/:clientID/events')
-//     .get(eventsCtrl.eventsClientGetAll); 
+router
+    .route('/clients/:clientId/events')
+    .get(eventsCtrl.eventsClientGetAll); 
 
 
 // router
