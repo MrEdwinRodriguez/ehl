@@ -51,7 +51,7 @@ module.exports.eventsClientGetAll = function(req, res){
 
         return models.Events.findAll({
         where: {
-            ClientId: clientId,
+            ClientId: clientId
         },
         include: [{
             model: models.Clients

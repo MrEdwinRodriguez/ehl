@@ -4,8 +4,8 @@ var models = require('../models');
 module.exports.ticketsForEvent = function(req, res) {
   console.log('tickets for event')
 
-    // var eventId = req.params.userId;
-    var eventId = 1;
+    
+    var eventId = req.params.eventId;
 
     return models.Tickets.findAll({
         where: {

@@ -30,3 +30,26 @@ module.exports.register = function(req, res) {
         .json(req.body)
 
 }
+
+module.exports.patronsClientGetAll = function(req, res) {
+    console.log('patrons get all for clients')
+
+    var clientId = req.params.clientId
+    console.log(clientId)
+
+    return models.Patrons.findAll({
+        where: {
+            ClientId: clientId
+        },
+        include: [{
+            model: models.Events,
+            include: [models.Tickets]
+
+        }],
+    })
+
+    res
+        .status(200)
+        .json(req.body)
+
+}
