@@ -83,6 +83,10 @@ router
     .get(ticketsCtrl.ticketsGetAll);
 
 router
+    .route('/tickets/purchase')
+    .post(ticketsCtrl.ticketsPurchase);    
+
+router
     .route('/tickets/:ticketId')
     .get(ticketsCtrl.ticketsGetOne);    
 

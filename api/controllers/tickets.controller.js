@@ -59,3 +59,15 @@ module.exports.ticketsGetOne = function(req, res) {
         .json({ "hello": "world" })
 
 }
+
+
+module.exports.ticketsPurchase = function(req, res) {
+    console.log('purchase tickets')
+    console.log(req.body)
+
+
+    res
+        .status(202)
+        .json({ "hello": "world" })
+
+}
