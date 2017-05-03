@@ -19,6 +19,10 @@ module.exports = function(sequelize, DataTypes) {
             type: Sequelize.CHAR(255),
             allowNull: false
         },
+    password: {
+            type: Sequelize.CHAR(255),
+            allowNull: false
+        },        
     address: {
             type: Sequelize.CHAR(255),
             allowNull: true
@@ -36,9 +40,17 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: true
         },
     age: {
-            type: Sequelize.INTEGER(5),
+            type: Sequelize.INTEGER(3),
             allowNull: true
         },
+    security_question: {
+            type: Sequelize.CHAR(255),
+            allowNull: true
+        },
+    security_answer: {
+            type: Sequelize.CHAR(255),
+            allowNull: true
+        },                
     gender: {
             type: Sequelize.CHAR(1),
             allowNull: true

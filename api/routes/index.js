@@ -64,9 +64,9 @@ router
 //     .route('/patrons/:patronsId')
 //     .get(patronsCtrl.patronsGetOne); 
 
-router
-    .route('/clients/:clientId/patrons')
-    .get(patronsCtrl.patronsClientGetAll); 
+// router
+//     .route('/clients/:clientId/patrons')
+//     .get(patronsCtrl.patronsClientGetAll); 
 
 // router
 //     .route('/clients/:clientId/events/:eventId/patrons/:patronId')

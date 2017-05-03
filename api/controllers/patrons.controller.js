@@ -8,8 +8,9 @@ module.exports.register = function(req, res) {
     console.log('patron being registered')
 
     var password = req.body.password;
+    console.log(req.body)
 
-    return models.Clients.create({
+    return models.Patrons.create({
         password: bcrypt.hashSync(password, bcrypt.genSaltSync(10)),
         first_name: req.body.first_name,
         last_name: req.body.last_name,
@@ -21,7 +22,10 @@ module.exports.register = function(req, res) {
         zipcode: req.body.zipcode,
         age: req.body.age,
         gender: req.body.gender,
-        agreed_terms: req.body.terms
+        agreed_terms: req.body.terms,
+        security_question: req.body.question,
+        security_answer: req.body.answer
+        
 
     })
 
@@ -31,25 +35,4 @@ module.exports.register = function(req, res) {
 
 }
 
-module.exports.patronsClientGetAll = function(req, res) {
-    console.log('patrons get all for clients')
 
-    var clientId = req.params.clientId
-    console.log(clientId)
-
-    return models.Patrons.findAll({
-        where: {
-            ClientId: clientId
-        },
-        include: [{
-            model: models.Events,
-            include: [models.Tickets]
-
-        }],
-    })
-
-    res
-        .status(200)
-        .json(req.body)
-
-}

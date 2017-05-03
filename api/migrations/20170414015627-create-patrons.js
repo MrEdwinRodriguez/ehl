@@ -17,6 +17,9 @@ module.exports = {
       phone_number: {
         type: Sequelize.STRING
       },
+      password: {
+        type: Sequelize.STRING
+      },      
       email: {
         type: Sequelize.STRING
       },
@@ -35,6 +38,12 @@ module.exports = {
       zip: {
         type: Sequelize.INTEGER
       },
+      security_question:{
+        type: Sequelize.STRING
+      },
+      security_answer:{
+        type: Sequelize.STRING
+      },      
       age: {
         type: Sequelize.INTEGER
       },
