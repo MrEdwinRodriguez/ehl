@@ -55,6 +55,11 @@ router
     .route('/patrons/register')
     .post(patronsCtrl.register);
 
+router
+    .route('/patrons/login')
+    .post(patronsCtrl.login);    
+
+
  //get patrons
 // router
 //     .route('/patrons')
