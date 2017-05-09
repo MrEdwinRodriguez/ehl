@@ -80,14 +80,27 @@ var ticket_number = "";
     makeBulk(req.body.quantity);
 
 
+function makeid() {
+  
+     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        var text = "";
+     for (var i = 0; i < 10; i++)
+         text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+     return text;
+ }
+ 
+
+
     function makeBulk(amount) {
 
        for (i=0; i<amount; i++) {
         console.log(amount)
 
-        var rdmString = 123456789;
+        var ticket_number = makeid() 
+            // makeid();
 
-        var uniqueTicket = new Ticket(req.body.first_name, req.body.last_name, rdmString, 1);
+        var uniqueTicket = new Ticket(req.body.first_name, req.body.last_name, ticket_number, 1);
         tix.push(uniqueTicket);
     }
 }
