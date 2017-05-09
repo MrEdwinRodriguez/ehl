@@ -54,7 +54,7 @@ module.exports.ticketsGetOne = function(req, res) {
     console.log('tickets get one')
 
 
-    res
+    res 
         .status(202)
         .json({ "hello": "world" })
 
@@ -64,10 +64,31 @@ module.exports.ticketsGetOne = function(req, res) {
 module.exports.ticketsPurchase = function(req, res) {
     console.log('purchase tickets')
     console.log(req.body)
+var ticket_number = "";
+    makeid();
+    function makeid() {
+        
+        var possible = "0123456789";
 
+        for (var i = 0; i < 10; i++)
+            ticket_number += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return ticket_number;
+    }
+
+console.log(ticket_number)
+
+    return models.Tickets.create({
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        ticket_number: ticket_number,
+        EventId: 1
+  
+    })
 
     res
-        .status(202)
-        .json({ "hello": "world" })
+        .status(200)
+        .json(req.body)
 
 }
