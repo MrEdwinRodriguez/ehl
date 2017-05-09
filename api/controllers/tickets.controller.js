@@ -64,28 +64,39 @@ module.exports.ticketsGetOne = function(req, res) {
 module.exports.ticketsPurchase = function(req, res) {
     console.log('purchase tickets')
     console.log(req.body)
+
+
+function Ticket(first, last, ticket_number, event) {
+    this.first_name = first;
+    this.last_name = last;
+    this.ticket_number = ticket_number;
+    this.EventId = event;
+}
+
+var tix = [];
+
 var ticket_number = "";
-    makeid();
-    function makeid() {
-        
-        var possible = "0123456789";
 
-        for (var i = 0; i < 10; i++)
-            ticket_number += possible.charAt(Math.floor(Math.random() * possible.length));
+    makeBulk(req.body.quantity);
 
-        return ticket_number;
+
+    function makeBulk(amount) {
+
+       for (i=0; i<amount; i++) {
+        console.log(amount)
+
+        var rdmString = 123456789;
+
+        var uniqueTicket = new Ticket(req.body.first_name, req.body.last_name, rdmString, 1);
+        tix.push(uniqueTicket);
     }
+}
 
-console.log(ticket_number)
+console.log(tix)
 
-    return models.Tickets.create({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
-        ticket_number: ticket_number,
-        EventId: 1
+    return models.Tickets.bulkCreate(tix)
+    
   
-    })
 
     res
         .status(200)
