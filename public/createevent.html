@@ -39,7 +39,7 @@
                                         <input type="date" class='login-field' name="event_date" id='event_date' required>
                                     </div>
                                     <div class="control-group">
-                                        < <input type="time" class='login-field' name="event_time" id='event_time' required>
+                                        <input type="time" class='login-field' name="event_time" id='event_time' required>
                                     </div>
                                     <div class="control-group">
                                         <input type="text" class="login-field" placeholder="venue" id="venue" name='venue' required>
@@ -86,6 +86,23 @@
                                     <div class="control-group">
                                         <input type="number" class="login-field" placeholder="Allotment" id="allotment" name='allotment' required>
                                     </div>
+
+ <div class="control-group">
+    <div id='gender' style='display:none'>
+        <select>
+            <option value="">Gender</option>
+            <option value="male" id='male' name='male'>Male</option>
+            <option value="female" id='female' name='female'>Female</option>
+        </select>
+    </div>
+    <input type="checkbox" name="c1" onclick="showMe('gender')">Gender<br>
+</div>
+ <div class="control-group">
+  <div id='profession' style='display:none'><input type="text" class="login-field" placeholder="Profession" id="profession" name='profession' required><br></div> 
+    <input type="checkbox" name="c1" onclick="showMe('profession')">Profession<br>
+</div>
+
+
                                     <button class="btn btn-primary btn-large btn-block" href="client.html" type='submit'>login</button>
                                 </div>
                             </form>
@@ -103,6 +120,6 @@
 </body>
 <script src="assets/javascript/jquery-3.1.1.min"></script>
 <script src="assets/javascript/bootstrap.min.js"></script>
-<script src="assets/javascript/script.js"></script>
+<script src="js/script.js"></script>
 
 </html>

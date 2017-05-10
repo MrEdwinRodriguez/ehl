@@ -8,7 +8,7 @@ module.exports.createEvent = function(req, res){
 	console.log(req.body)
 	console.log("id: " +req.session.client_id)
 
-  return models.Events.create({
+  return models.Events.create({ 
         event_name: req.body.event_name,
         event_date: req.body.event_date,
         event_time: req.body.event_time,
