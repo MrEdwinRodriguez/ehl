@@ -14,7 +14,7 @@ var sequelizeConnection = models.sequelize;
 sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
     // this syncs our tables
     .then(function() {
-        return sequelizeConnection.sync()
+        return sequelizeConnection.sync({force: true})
     })
 
   

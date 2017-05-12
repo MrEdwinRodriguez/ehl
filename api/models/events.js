@@ -71,7 +71,31 @@ module.exports = function(sequelize, DataTypes) {
     ticket_allotment: {
             type: Sequelize.INTEGER,
             allowNull: false
-     }   
+     },
+    gender: {
+            type: Sequelize.CHAR(10),
+            allowNull: true
+    },
+    dob: {
+            type: Sequelize.CHAR(10),
+            allowNull: true
+    },
+    income: {
+            type: Sequelize.CHAR(10),
+            allowNull: true
+    },
+    education: {
+            type: Sequelize.CHAR(10),
+            allowNull: true
+    },
+    ethnicity: {
+            type: Sequelize.CHAR(10),
+            allowNull: true
+    },
+    religion: {
+            type: Sequelize.CHAR(10),
+            allowNull: true
+    }                      
   }, {
     classMethods: {
       associate: function(models) {

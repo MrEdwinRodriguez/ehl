@@ -62,6 +62,24 @@ module.exports = {
       ticket_allotment: {
         type: Sequelize.INTEGER
       },
+      gender: {
+        type: Sequelize.STRING
+      },
+      dob: {
+        type: Sequelize.INTEGER
+      },
+      income: {
+        type: Sequelize.STRING
+      },
+      education: {
+        type: Sequelize.STRING
+      },       
+      ethnicity: {
+        type: Sequelize.STRING
+      }, 
+      religion: {
+        type: Sequelize.STRING
+      },                        
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

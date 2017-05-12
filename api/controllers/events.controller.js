@@ -26,7 +26,13 @@ module.exports.createEvent = function(req, res){
         ticket_sales_start: req.body.tickets_start,
         ticket_sales_end: req.body.tickets_end,
         ticket_allotment: req.body.allotment,
-        ClientId: req.session.client_id
+        ClientId: req.session.client_id,
+        dob: req.body.dob,
+        gender: req.body.gender,
+        education: req.body.education,
+        income: req.body.income,
+        ethnicity: req.body.ethnicity,
+        religion: req.body.religion
 
     })
 
