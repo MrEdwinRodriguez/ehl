@@ -1,864 +1,443 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Metas -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Event Horizon Live</title>
-    <meta name="description" content="Event Horizon">
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.css">
-    <link rel="stylesheet" href="assets/css/owl.transitions.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,800%7cRoboto:300,400,500,700" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="assets/img/template/favicon.png">
-	<link rel="apple-touch-icon" href="assets/img/template/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/template/icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="assets/img/template/icon-114x114.png">
-	
-	<!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.min.js"></script>
-      <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body data-spy="scroll" data-target="#main-nav-collapse">
-    
-  
-    <div id="faceoff">
-        <div id="preloader"></div>
-        <div class="preloader-section"></div>
+<html>
+    <head>
+        <!--  SEO STUFF START HERE -->
+        <title>reDesign Home Page</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="robots" content="follow, index" />
+        <!--  SEO STUFF END -->
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--  revolution slider plugin : begin -->        
+        <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/rs-responsive.css" media="screen" />
+        <!--  revolution slider plugin : end -->
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/custom.css" />
+        <link rel="stylesheet" href="css/css3-menu.css" />
+        <link rel="stylesheet" href="css/isotope.css" />
+        <link rel="stylesheet" href="css/color_scheme.css" />
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic" rel="stylesheet" type="text/css" />
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,900,500,600,700,800' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/font-awesome.css" />
+        <link rel="stylesheet" href="css/font-awesome-ie7.css" />
+        <link rel="stylesheet" href="css/flexslider.css" />
+        <link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" type="text/css" href="css/IE-fix.css" />
+        <![endif]-->
+    </head>
+    <body>
+        <!-- THE LINE AT THE VERY TOP OF THE PAGE -->
+        <div class="top_line"></div>
+        <!-- HEADER AREA -->
+        <header>
+            <div class="container">
+                <div class="row">
+                    <!-- HEADER: LOGO AREA -->
+                    <div class="span4 logo">
+                        <a class="logo" href="index.html">
+                            <img alt="logo" title="ReDesign" src="img/logo.png">
+                        </a>
+                    </div>
+                    <div class="span4 offset4">
+                        <!-- HEADER: PHONE NUMBER -->
+                        <a href="#myModal" role="button" class="btn" data-toggle="modal">Login</a>
+
+                        <p class="head_phone">
+                            <span class="icon-phone"></span><a href="tel:555-555-5555">(800) 655-7800</a></p>
+                    </div>
+                    <!-- HEADER: SOCIAL ICONS -->
+                    <ul class="socials unstyled">
+                        <li><a data-rel="tooltip" title="Follow us on Flickr" class="flickr" href="#"></a></li>
+                        <li><a data-rel="tooltip" title="Follow us on Twitter" class="twitter" href="#"></a></li>
+                        <li><a data-rel="tooltip" title="Follow us on Facebook" class="facebook" href="#"></a></li>
+                        <li><a data-rel="tooltip" title="Follow us on Youtube" class="youtube" href="#"></a></li>
+                        <li><a data-rel="tooltip" title="Follow us on Dribbble" class="dribbble" href="#"></a></li>
+                        <li><a data-rel="tooltip" title="Follow us on Pinterest" class="pinterest" href="#"></a></li>
+                    </ul>
+                </div>
+            </div>            
+        </header>
+
+<!-- LOGIN Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Modal header</h3>
+  </div>
+  <div class="modal-body">
+<form method='post' action="/api/client/login">
+    <div class="login-form">
+        <div class="control-group">
+            <input type="email" class="login-field" value="" placeholder="email" id="user_email" name='user_email' required>
+            <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+        <div class="control-group">
+            <input type="password" class="login-field" value="" placeholder="password" id="user_password" name='user_password' required>
+            <label class="login-field-icon fui-lock" for="login-pass"></label>
+        </div>
+        <button class="btn btn-primary btn-large btn-block" href="dashboard.html" type='submit'>login</button>
     </div>
-    
- 
-    <nav class="navbar navbar-default" data-spy="affix" data-offset-top="500">
-        <div class="container">
-        
-      
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">GEO</a>
-            </div>
+</form>
 
-         
-            <div class="collapse navbar-collapse" id="main-nav-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#intro-area">Intro</a></li>
-                    <li><a href="#features-area">Feature</a></li>
-                    <li><a href="#description-area">Description</a></li>
-                    <li><a href="#screenshot-area">Screenshots</a></li>
-                    <li><a href="#download-area">Download</a></li>
-                    <li><a href="#contact-area">Contact</a></li>
-                    <li class="nav-download"><a href="#">Download</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-   
-  
-    <header id="top-header" class="top-header section-bg overlay-black">
-        <div class="verticle-center">
-            <div class="container">
-                <div class="row">
-                    <div class="display-flex">
-                        <div class="col-lg-7 col-md-6">
-                            <a class="logo" href="#"><img src="assets/img/template/logo.png" alt="..."></a>
-                            <h1>Showcase your beautiful app with <b>geo</b></h1>
-                            <p>Geo is one of the creative and clean app landing page to present your awesome app. it’s now available in app stores and also in play stores.</p>
-                            <div class="device-download">
-                                <a href="#"><i class="fa fa-android"></i></a>
-                                <a href="#"><i class="fa fa-apple"></i></a>
-                                <a href="#"><i class="fa fa-windows"></i></a>
-                            </div>
-                            <div class="button-group">
-                                <a class="btn" href="#">Download Now</a>
-                                <a class="btn btn-orange" href="#">Take a Tour</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-lg-offset-1 hidden-sm hidden-xs">
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>
 
-                            <form method='post' action="/api/patrons/login" id="banner-signup" class="banner-signup text-center wow animated fadeInUp"  data-wow-duration="1.5s" action="#" method="post">
-                                <h3 class="signup-title">Login !</h3>
-                                <div class="login-form">
-                                    <div class="control-group">
-                                        <input type="email" class="login-field" value="" placeholder="email" id="user_email" name='user_email' required>
-                                        <label class="login-field-icon fui-user" for="login-name"></label>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="password" class="login-field" value="" placeholder="password" id="user_password" name='user_password' required>
-                                        <label class="login-field-icon fui-lock" for="login-pass"></label>
-                                    </div>
-                                    <button class="btn btn-primary btn-large btn-block" href="dashboard.html" type='submit'>login</button>
-                                </div>
-                                <a href="patronsignup.html">Not A Member? Register</a>
-                            </form>
-
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    
-  
-    <div class="main-wrap">
-        
-      
-        <div class="section cta-section section-bg">
+        <!-- PRIMARY SITE NAVIGATION -->
+        <div class="navbar-wrapper">
             <div class="container">
-                <div class="row">
-                    <div class="display-flex">
-                        <div class="col-md-6">
-                            <h4 class="cta-heading">Are you interested! Let's grab it for free trial!</h4>
-                        </div>
-                        <div class="col-md-6">
-                            <form id="trialForm" class="trial-form" action="#" method="post">
-                                <input type="email" name="email" placeholder="Your Email" required>
-                                <button class="btn btn-white" type="submit">Free Trial</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-       
-        <div id="intro-area" class="section section-padding-extra">
-            <div class="container">
-                <div class="row">
-                    <div class="intros">
-                        <div class="col-sm-4">
-                            <div class="intro text-center wow animated fadeInUp"  data-wow-duration="1.5s">
-                                <span class="intro-icon"><i class="fa fa-paint-brush"></i></span>
-                                <h4 class="intro-heading">Unique Design</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetured adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer citation ullamco laboris.</p>
+                <div class="navbar">
+                    <div class="navbar-inner">
+                            <div class="buttons-container">
                             </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="intro text-center wow animated fadeInUp" data-wow-delay="0.5s"  data-wow-duration="1.5s">
-                                <span class="intro-icon"><i class="fa fa-angellist"></i></span>
-                                <h4 class="intro-heading">Corporate Branding</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetured adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer citation ullamco laboris.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="intro text-center wow animated fadeInUp" data-wow-delay="1s"  data-wow-duration="1.5s">
-                                <span class="intro-icon"><i class="fa fa-support"></i></span>
-                                <h4 class="intro-heading">Any time support</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetured adipiscing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer citation ullamco laboris.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        ------------- Freatures ------------------
-        <div id="features-area" class="section section-padding section-bg features-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <div class="section-heading">
-                            <h2 class="section-title">Crazy Feature</h2>
-                            <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="features text-center">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="feature wow animated fadeInUp" data-wow-delay="0.5s"  data-wow-duration="1.5s">
-                                <span class="feature-icon"><i class="fa fa-gear"></i></span>
-                                <h4 class="feature-title">Tons of API Callback</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporin cididulabore et dolore</p>
-                            </div>
-                            <div class="feature wow animated fadeInUp" data-wow-delay="0.5s"  data-wow-duration="1.5s">
-                                <span class="feature-icon"><i class="fa fa-star-half-o"></i></span>
-                                <h4 class="feature-title">Rebust Demo Package</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporin cididulabore et dolore</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 hidden-sm hidden-xs text-center wow animated fadeInUp"  data-wow-duration="1.5s">
-                            <img src="assets/img/mocks/2.png" alt="...">
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="feature wow animated fadeInUp" data-wow-delay="1s"  data-wow-duration="1.5s">
-                                <span class="feature-icon"><i class="fa fa-arrows-alt"></i></span>
-                                <h4 class="feature-title">Responsive Support</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporin cididulabore et dolore</p>
-                            </div>
-                            <div class="feature wow animated fadeInUp" data-wow-delay="1s"  data-wow-duration="1.5s">
-                                <span class="feature-icon"><i class="fa fa-exchange"></i></span>
-                                <h4 class="feature-title">Custom Scrollbar</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporin cididulabore et dolore</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        ------------- More Features Area --------------->
-        <div id="more-features-area" class="section section-padding-extra">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <div class="section-heading">
-                            <h2 class="section-title">More features</h2>
-                            <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="display-flex">
-                        <div class="col-lg-5 col-md-6">
-                            <div class="mock-group mock-group-2">
-                                <img class="front-mock wow animated fadeInLeft" data-wow-delay="0.5s"  data-wow-duration="1.5s" src="assets/img/mocks/3-front.png" alt="...">
-                                <img class="back-mock wow animated fadeInUp"  data-wow-duration="1.5s" src="assets/img/mocks/3-back.png" alt="...">
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-offset-1">
-                            <div class="more-features">
-                                <div class="more-feature">
-                                    <span class="more-feature-icon"><i class="fa fa-arrows-alt"></i></span>
-                                    <div class="more-feature-content">
-                                        <h4 class="more-feature-title">Responsive Support</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetured adip iscing elit, seddo eiusmod</p>
-                                    </div>
-                                </div>
-                                <div class="more-feature">
-                                    <span class="more-feature-icon"><i class="fa fa-gear"></i></span>
-                                    <div class="more-feature-content">
-                                        <h4 class="more-feature-title">Tons of API callbacks</h4>
-                                        <p>Lorem ipsum dolor sit amet, con sec tetured adip is cing elit, sed do</p>
-                                    </div>
-                                </div>
-                                <div class="more-feature">
-                                    <span class="more-feature-icon"><i class="fa fa-tablet"></i></span>
-                                    <div class="more-feature-content">
-                                        <h4 class="more-feature-title">IOS/Surface/Android</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetured adipiscing sed do eiusmod</p>
-                                    </div>
-                                </div>
-                                <div class="more-feature">
-                                    <span class="more-feature-icon"><i class="fa fa-undo"></i></span>
-                                    <div class="more-feature-content">
-                                        <h4 class="more-feature-title">Auto-Sliding</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetured adipiscing elit, sed do eiusmod sed do</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-       
-        <div id="fun-fact-area" class="section section-padding-extra section-bg fun-fact-area">
-            <div class="container">
-                <div class="row">
-                    <div class="fun-facts">
-                        <div class="col-md-3 col-sm-6 text-center">
-                            <div class="fun-fact">
-                                <span class="fact-icon"><i class="fa fa-users"></i></span>
-                                <h3 class="fact-count"><span class="fact-counter" data-from="0" data-to="46799"></span></h3>
-                                <p class="fact-name">Customers</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 text-center">
-                            <div class="fun-fact">
-                                <span class="fact-icon"><i class="fa fa-cloud-download"></i></span>
-                                <h3 class="fact-count"><span class="fact-counter" data-from="0" data-to="10000"></span>+</h3>
-                                <p class="fact-name">Total Download</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 text-center">
-                            <div class="fun-fact">
-                                <span class="fact-icon"><i class="fa fa-comments-o"></i></span>
-                                <h3 class="fact-count"><span class="fact-counter" data-from="0" data-to="5000"></span>+</h3>
-                                <p class="fact-name">5 star rating</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 text-center">
-                            <div class="fun-fact">
-                                <span class="fact-icon"><i class="fa fa-thumbs-o-up"></i></span>
-                                <h3 class="fact-count"><span class="fact-counter" data-from="0" data-to="110"></span></h3>
-                                <p class="fact-name">Support Team</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <! -->
-        <div id="description-area" class="section section-padding-extra">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <div class="section-heading">
-                            <h2 class="section-title">Why Geo Best?</h2>
-                            <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                   <!--  
-                    <div class="display-flex">
-                        <div class="col-lg-8 col-md-7 float-left">
-                            <div class="description-tab">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation"><a href="#description-1" aria-controls="description-1" role="tab" data-toggle="tab"><i class="fa fa-cloud-download"></i></a></li>
-                                    <li role="presentation" class="active"><a href="#description-2" aria-controls="description-2" role="tab" data-toggle="tab"><i class="fa fa-sort-alpha-asc"></i></a></li>
-                                    <li role="presentation"><a href="#description-3" aria-controls="description-3" role="tab" data-toggle="tab"><i class="fa fa-puzzle-piece"></i></a></li>
-                                    <li role="presentation"><a href="#description-4" aria-controls="description-4" role="tab" data-toggle="tab"><i class="fa fa-random"></i></a></li>
+                            <ul class="blue nav" id="css3-menu">
+                                <li class="dropdown">
+                                <a class="dropdown-toggle_" data-toggle="dropdown" href="index.html">Home</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="index.html">Home Page</a></li>
+                                    <li><a href="index2.html">Alternate Home Page 1</a></li>
+                                    <li><a href="index3.html">Alternate Home Page 2</a></li>
                                 </ul>
+                            </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle_" data-toggle="dropdown" href="">Features</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="product-info.html">Product Information</a></li>
+                                        <li><a href="product-tour.html">Feature Tour</a></li>
+                                        <li><a href="product-release-history.html">Product History</a></li>
+                                        <li><a href="product-comparison.html">Feature Comparsion</a></li>
+                                        <li><a href="pricing-tables.html">Pricing Tables</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="faqs-support.html">FAQs/Support</a>
+                                </li>
+                                <li>
+                                    <a href="shortcodes.html">Shortcodes</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle_" data-toggle="dropdown" href="">Portfolio</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="portfolio-masonry.html">Portfolio Masonry</a></li>
+                                        <li><a href="portfolio-grid.html">Portfolio Grid</a></li>
+                                        <li><a href="portfolio-item.html">Portfolio Item</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle_" data-toggle="dropdown" href="">Pages</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                                        <li><a href="both-sidebars.html">Both Sidebars</a></li>
+                                        <li><a href="team-1-column-full-page.html">Team Row</a></li>
+                                        <li><a href="team-3.html">Team 2-Column</a></li>
+                                        <li><a href="team-3-centered.html">Team 2-Column Centered</a></li>
+                                        <li><a href="team-2.html">Team Row with Left Sidebar</a></li>
+                                        <li><a href="gallery.html">Gallery</a></li>                                      
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="contactus.html">Contact Us</a>
+                                </li>                               
+                            </ul>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <!-- MAIN CONTENT AREA: SLIDER BANNER (REVOLUTION SLIDER) -->
+                <div class="fullwidthbanner-container" >
+                    <div class="banner" >
+                        <ul>
+                            <!-- MAIN CONTENT AREA: SLIDER BANNER (REVOLUTION SLIDER) - SLIDE 1 [SLIDE STYLE=BOXFADE] -->
+                            <li class="slide1" data-transition="slotfade-horizontal"  data-masterspeed="300" data-slotamount="20">
+                                <img alt="" src="img/slide_01.png" />
+                                <div class="caption lfb carousel-caption" data-x="500" data-y="50" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
+                                    <img alt="" src="img/rocket_01.png" />
+                                </div>
+                                <div class="caption sft carousel-caption" data-x="32" data-y="51" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background: none; padding-left: 0;">
+                                    <p class="large">IS YOUR COMPANY, PRODUCT OR<br /> SERVICE READY TO BLASTOFF?</p>
+                                </div>
+                                <div class="caption sfr carousel-caption" data-x="17" data-y="155" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
+                                    <p class="medium">When your business is ready for takeoff then promote it with<br /> reDesign, an amazing new multi-purpose template built on the<br /> rocket-fueled Twitter Bootstrap framework.</p>
+                                </div>
+                                <div class="caption sfr carousel-caption" data-x="17" data-y="280" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
+                                    <a class="slider-btn" href="#"><img src="img/launch_btn.png" alt="Launch reDesign" /></a>
+                                </div>
+                            </li> 
+                            <!-- MAIN CONTENT AREA: SLIDER BANNER (REVOLUTION SLIDER) - SLIDE 2 [SLIDE STYLE=BOXFADE] -->
+                            <li class="slide2" data-transition="slotfade-horizontal"  data-masterspeed="300" data-slotamount="20">
+                                <img alt="" src="img/slide_01.png" />
+                                <div class="caption lfb carousel-caption" data-x="0" data-y="0" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
+                                    <img alt="" src="img/screenshot.png" />
+                                </div>
+                                <div class="caption sft carousel-caption" data-x="500" data-y="21" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background: none; padding-left: 0;">
+                                    <p class="large">With Bonus Pages and<br /> Features You Simply Won’t<br /> Find Anywhere Else</p>
+                                </div>
+                                <div class="caption sfr carousel-caption" data-x="490" data-y="170" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
+                                    <p class="medium"><img src="img/slide2_bullet.png" alt="" />  Product Information Page Template</p>
+                                    <p class="medium"><img src="img/slide2_bullet.png" alt="" />  Product Feature Tour</p>
+                                    <p class="medium"><img src="img/slide2_bullet.png" alt="" />  Product/History Timeline</p>
+                                    <p class="medium"><img src="img/slide2_bullet.png" alt="" />  Product/Service Comparison Chart</p>
+                                    <p class="medium"><img src="img/slide2_bullet.png" alt="" />  Product/Service Pricing Tables</p>
+                                    <p class="medium"><img src="img/slide2_bullet.png" alt="" />  Support & FAQs Page and more...</p>
+                                </div>
+                                <div class="caption sfr carousel-caption" data-x="490" data-y="345" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
+                                    <a class="slider-btn" href="#"><img src="img/tour_button.png" alt="" /></a>
+                                </div>
+                            </li> 
+                            <!-- MAIN CONTENT AREA: SLIDER BANNER (REVOLUTION SLIDER) - SLIDE 3 [SLIDE STYLE=LEFT] -->
+                            <li class="slide3" data-transition="slotfade-horizontal"  data-masterspeed="300" data-slotamount="20">
+                                <img alt="" src="img/slide_01.png" />
+                                <div class="caption lfb carousel-caption" data-x="240" data-y="-12" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
+                                    <img alt="" src="img/rocket_03.png" />
+                                </div>
+                                <div class="caption sft carousel-caption" data-x="32" data-y="51" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background: none; padding-left: 0;">
+                                    <p class="large">Purchase reDesign and activate<br /> warp speed for your business</p>
+                                </div>
+                                <div class="caption sfr carousel-caption" data-x="17" data-y="155" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
+                                    <p class="medium">Purchase reDesign and strap on your seatbelt and<br /> prepare your business for warp speed. With reDesign,<br /> the sky’s the limit!</p>
+                                </div>
+                                <div class="caption sfr carousel-caption" data-x="17" data-y="270" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
+                                    <a class="slider-btn" href="#"><img src="img/purchase_button.png" alt="" /></a>
+                                </div>
+                            </li>                            
+                        </ul>
+                        <div class="tp-bannertimer"></div>
+                    </div>
+                </div>
+        <!-- MAIN CONTENT AREA -->
+        <div class="main-wrapper">
+<div class="main-content">
+            <div class="container">
+                
 
-                                
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane fade" id="description-1">
-                                        <h4 class="description-title">Feature Description Title</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed domod tempor incididunt ut labore et dolore magna aliqua. Ut eniquis notrud exercitation ullamco laboris nisi ut aliquip commodoquat.Duis aute irure reprehenderit in voluptate velit esse</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed domod tempor incididunt ut labore et dolore magna aliqua. Ut eniquis notrud exercitation ullamco laboris nisi ut aliquip commodoquat.</p>
-                                        <ul>
-                                            <li>Consectetur adipisicing elit, sed domod</li>
-                                            <li>Richard McClintock, a Latin professor at Hampden</li>
-                                            <li>There are many variations of passages</li>
-                                            <li>If you are going to use a passage of Lorem Ipsum, you need</li>
-                                        </ul>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade in active" id="description-2">
-                                        <h4 class="description-title">Feature Description Title</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed domod tempor incididunt ut labore et dolore magna aliqua. Ut eniquis notrud exercitation ullamco laboris nisi ut aliquip commodoquat.Duis aute irure reprehenderit in voluptate velit esse</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed domod tempor incididunt ut labore et dolore magna aliqua. Ut eniquis notrud exercitation ullamco laboris nisi ut aliquip commodoquat.</p>
-                                        <ul>
-                                            <li>Consectetur adipisicing elit, sed domod</li>
-                                            <li>Richard McClintock, a Latin professor at Hampden</li>
-                                            <li>There are many variations of passages</li>
-                                            <li>If you are going to use a passage of Lorem Ipsum, you need</li>
-                                        </ul>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="description-3">
-                                        <h4 class="description-title">Feature Description Title</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed domod tempor incididunt ut labore et dolore magna aliqua. Ut eniquis notrud exercitation ullamco laboris nisi ut aliquip commodoquat.Duis aute irure reprehenderit in voluptate velit esse</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed domod tempor incididunt ut labore et dolore magna aliqua. Ut eniquis notrud exercitation ullamco laboris nisi ut aliquip commodoquat.</p>
-                                        <ul>
-                                            <li>Consectetur adipisicing elit, sed domod</li>
-                                            <li>Richard McClintock, a Latin professor at Hampden</li>
-                                            <li>There are many variations of passages</li>
-                                            <li>If you are going to use a passage of Lorem Ipsum, you need</li>
-                                        </ul>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="description-4">
-                                        <h4 class="description-title">Feature Description Title</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed domod tempor incididunt ut labore et dolore magna aliqua. Ut eniquis notrud exercitation ullamco laboris nisi ut aliquip commodoquat.Duis aute irure reprehenderit in voluptate velit esse</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed domod tempor incididunt ut labore et dolore magna aliqua. Ut eniquis notrud exercitation ullamco laboris nisi ut aliquip commodoquat.</p>
-                                        <ul>
-                                            <li>Consectetur adipisicing elit, sed domod</li>
-                                            <li>Richard McClintock, a Latin professor at Hampden</li>
-                                            <li>There are many variations of passages</li>
-                                            <li>If you are going to use a passage of Lorem Ipsum, you need</li>
-                                        </ul>
-                                    </div>
+                <div class="row main-block">
+                    <div class="span12">
+                        <!-- MAIN CONTENT AREA: REDESIGN CUSTOM - HERO LIST -->
+                        <div class="row show-grid hero-list features-list">
+                            <div class="span3">
+                                <div class="image-wrapper">
+                                    <img alt="" src="img/home_grid.png" />
                                 </div>
+                                <h2>Clean Design</h2>
+                                <p>Modern, clean design to give your business a highly professional appearance.
+                                    <a href="#">Learn more&nbsp;&raquo;</a>
+                                </p>
+                            </div>
+                            <div class="span3">
+                                <div class="image-wrapper">
+                                    <img alt="" src="img/home_gears.png" />
+                                </div>
+                                <h2>Flexible Layout</h2>
+                                <p>Flexible page layout templates to help you quickly organize your website's content.
+                                    <a href="#">Learn more&nbsp;&raquo;</a>
+                                </p>
+                            </div>
+                            <div class="span3">
+                                <div class="image-wrapper">
+                                    <img alt="" src="img/home_arrow.png" />
+                                </div>
+                                <h2>Quick Shortcuts</h2>
+                                <p>Dozens of unique shortcuts to add your own cool and custom flare and personal style.
+                                    <a href="#">Learn more&nbsp;&raquo;</a>
+                                </p>
+                            </div>
+                            <div class="span3">
+                                <div class="image-wrapper">
+                                    <img alt="" src="img/home_arrows.png" />
+                                </div>
+                                <h2>Responsive Action</h2>
+                                <p>Ultra-responsive action so your pages work beautifully on practically any device.
+                                    <a href="#">Learn more&nbsp;&raquo;</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-5 float-left">
-                            <div class="mock-group mock-group-3">
-                                <img class="front-mock wow animated fadeInRight" data-wow-delay="0.5s"  data-wow-duration="1.5s" src="assets/img/mocks/4-front.png" alt="...">
-                                <img class="back-mock wow animated fadeInUp"  data-wow-duration="1.5s" src="assets/img/mocks/4-back.png" alt="...">
-                            </div>
-                        </div>
-                    </div>
+                <!-- FREE TRIAL PROMO BOX -->
+                <div class="hero-unit dark-hero">
+                    <h1><span>Signup</span> for a <span>Free Trial</span> Now</h1>
+                    <ul class="unstyled">
+                        <li>Easy, no-hassle sign-up</li>
+                        <li>|</li>
+                        <li>Free 30-day trial</li>
+                        <li>|</li>
+                        <li>Pricing starts at just $27/year after trial period</li>                        
+                    </ul>
+                    <a class="btn btn-large btn-primary">Sign Up</a>
                 </div>
-            </div>
-        </div>
-        
 
-        <div id="how-it-works" class="section section-padding section-bg how-it-works">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <h2 class="section-title wow animated fadeInDown" data-wow-duration="1.5s">How it works</h2>
+                <div class="row show-grid features-block mini-blocks">
+                    <div class="span4 block1">
+                        <div class="mini-wrapper">
+                        <h2>Recent Software Updates</h2>
+                        <ul class="soft-updates">
+                            <li>
+                                <div class="date-img">
+                                    <span class="top-date">NOV</span>
+                                    <span class="bottom-date">3</span>
+                                </div>
+                                <p>Version 3.0 of reDesign has been released</p>
+                                <a href="product-release-history.html">details</a>
+                            </li>
+                            <li>
+                                <div class="date-img">
+                                    <span class="top-date">OCT</span>
+                                    <span class="bottom-date">28</span>
+                                </div>
+                                <p>Version 2.4 of reDesign has been released</p>
+                                <a href="product-release-history.html">details</a>
+                            </li>
+                            <li>
+                                <div class="date-img">
+                                    <span class="top-date">SEP</span>
+                                    <span class="bottom-date">17</span>
+                                </div>
+                                <p>Version 2.3 of reDesign has been released</p>
+                                <a href="product-release-history.html">details</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="span4 block2">
+                        <div class="mini-wrapper">
+                        <h2>What People Are Saying</h2>
+                        <ul>
+                            <li>
+                                <blockquote class="greyb">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <small><strong>Katherine Anne</strong> - barcamp BRISSBANE</small>
+                                </blockquote>
+                            </li>
+                            <li>
+                                    <blockquote class="greyb">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                                    <small><strong>James Riley</strong> - Engenharia Ambiental</small>
+                                </blockquote>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="span4 block3">
+                        <div class="mini-wrapper">
+                        <h2>A Few Of Our Customers</h2>
+                        <ul class="mini-clients">
+                            <li>
+                                <img src="img/client_001.png" alt="">
+                            </li>
+                            <li>
+                                <img style="margin-left: -14px;" src="img/client_002.png" alt="">
+                            </li>
+                            <li>
+                                <img src="img/client_003.png" alt="">
+                            </li>
+                        </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <a class="video-play-icon wow animated fadeInUp" data-wow-duration="1.5s" href="https://www.youtube.com/watch?v=0I8GmbDU7c4"><i class="fa fa-play"></i></a>
-                    </div>
-                </div>
+
+
             </div>
-        </div>
-        
-      
-        <div id="screenshot-area" class="section section-padding-extra">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <div class="section-heading">
-                            <h2 class="section-title">Screenshot</h2>
-                            <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div id="screenshots" class="screenshots">
-                        <div id="screenshot-carousel" class="screenshot-carousel owl-carousel">
-                            <div class="screenshot"><img src="assets/img/screen/1.jpg" alt="..."></div>
-                            <div class="screenshot"><img src="assets/img/screen/2.jpg" alt="..."></div>
-                            <div class="screenshot"><img src="assets/img/screen/3.jpg" alt="..."></div>
-                            <div class="screenshot"><img src="assets/img/screen/1.jpg" alt="..."></div>
-                            <div class="screenshot"><img src="assets/img/screen/2.jpg" alt="..."></div>
-                            <div class="screenshot"><img src="assets/img/screen/3.jpg" alt="..."></div>
-                            <div class="screenshot"><img src="assets/img/screen/1.jpg" alt="..."></div>
-                            <div class="screenshot"><img src="assets/img/screen/2.jpg" alt="..."></div>
-                            <div class="screenshot"><img src="assets/img/screen/3.jpg" alt="..."></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-   
-        <div id="review-area" class="section section-padding section-bg review-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <div class="section-heading">
-                            <h2 class="section-title">Reviews</h2>
-                            <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <div id="reviews" class="reviews">
-                            <div id="review-carousel" class="review-carousel owl-carousel">
-                                <div class="review text-center">
-                                    <div class="reviewer-mock"><img src="assets/img/client-team/client-1.jpg" alt="..."></div>
-                                    <p class="review-comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    <h4 class="commenter-name">Jacob Marlin</h4>
-                                    <p class="commenter-profession"><span class="designation">CEO</span>, <span class="company">Tech-Rocking</span></p>
-                                </div>
-                                <div class="review text-center">
-                                    <div class="reviewer-mock"><img src="assets/img/client-team/client-1.jpg" alt="..."></div>
-                                    <p class="review-comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    <h4 class="commenter-name">Jacob Marlin</h4>
-                                    <p class="commenter-profession"><span class="designation">CEO</span>, <span class="company">Tech-Rocking</span></p>
-                                </div>
-                                <div class="review text-center">
-                                    <div class="reviewer-mock"><img src="assets/img/client-team/client-1.jpg" alt="..."></div>
-                                    <p class="review-comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    <h4 class="commenter-name">Jacob Marlin</h4>
-                                    <p class="commenter-profession"><span class="designation">CEO</span>, <span class="company">Tech-Rocking</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    
-        <div id="price-area" class="section section-padding-extra">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <div class="section-heading">
-                            <h2 class="section-title">Price List</h2>
-                            <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="price-tables">
-                        <div class="col-sm-4">
-                            <div class="price-table text-center wow animated fadeInUp" data-wow-duration="1.5s">
-                                <div class="price-heading">
-                                    <h2 class="price-plan">Free Plan</h2>
-                                    <h3 class="plan-price">
-                                        <span class="price-ammount"><i class="fa fa-heart"></i> $0.00</span>
-                                        <span class="price-cycle">/per month</span>
-                                    </h3>
-                                </div>
-                                <ul class="plan-features">
-                                    <li class="plan-feature">Unlimited Space</li>
-                                    <li class="plan-feature">Unlimited Database</li>
-                                    <li class="plan-feature">Easy to Install</li>
-                                    <li class="plan-feature">Unlimited Subdomains</li>
-                                    <li class="plan-feature">Dedicated Server</li>
-                                </ul>
-                                <a class="btn btn-get-plan" href="#">Sign Up</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="price-table text-center active wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1.5s">
-                                <div class="price-heading">
-                                    <h2 class="price-plan">Regular Plan</h2>
-                                    <h3 class="plan-price">
-                                        <span class="price-ammount"><i class="fa fa-gears"></i> $333</span>
-                                        <span class="price-cycle">/per month</span>
-                                    </h3>
-                                </div>
-                                <ul class="plan-features">
-                                    <li class="plan-feature">Unlimited Space</li>
-                                    <li class="plan-feature">Unlimited Database</li>
-                                    <li class="plan-feature">Easy to Install</li>
-                                    <li class="plan-feature">Unlimited Subdomains</li>
-                                    <li class="plan-feature">Dedicated Server</li>
-                                </ul>
-                                <a class="btn btn-get-plan" href="#">Sign Up</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="price-table text-center wow animated fadeInUp" data-wow-delay="1s" data-wow-duration="1.5s">
-                                <div class="price-heading">
-                                    <h2 class="price-plan">Business Plan</h2>
-                                    <h3 class="plan-price">
-                                        <span class="price-ammount"><i class="fa fa-heart"></i> $999</span>
-                                        <span class="price-cycle"> /per month</span>
-                                    </h3>
-                                </div>
-                                <ul class="plan-features">
-                                    <li class="plan-feature">Unlimited Space</li>
-                                    <li class="plan-feature">Unlimited Database</li>
-                                    <li class="plan-feature">Easy to Install</li>
-                                    <li class="plan-feature">Unlimited Subdomains</li>
-                                    <li class="plan-feature">Dedicated Server</li>
-                                </ul>
-                                <a class="btn btn-get-plan" href="#">Sign Up</a>
-                            </div>
+            <!-- MAIN CONTENT AREA: REDESIGN CUSTOM - RECENT TWEETS BAR -->
+            <div class="recent-tweets">
+                <div class="container">
+                    <div class="row show-grid">
+                        <div class="span12 twitter-wrapper">
+                            <div id="nav_t"></div>
+                            <div class="tweets-slide"><ul class="slides"></ul></div>
+                            <a class="follow_img" href="#"><img alt="" src="img/follow.png" /></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        
-        <div id="download-area" class="section section-padding section-bg download-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <div class="section-heading no-sep">
-                            <h2 class="section-title">Download</h2>
-                            <p class="section-subtitle">It has survived not only five centuries, but also the leap into electronic</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <div class="button-group">
-                            <a class="btn btn-big btn-border wow animated fadeInUp" data-wow-duration="1.5s" href="#"><i class="fa fa-apple"></i> App Store</a>
-                            <a class="btn btn-big btn-border wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1.5s" href="#"><i class="fa fa-android"></i> Play Store</a>
-                            <a class="btn btn-big btn-border wow animated fadeInUp" data-wow-delay="1s" data-wow-duration="1.5s" href="#"><i class="fa fa-windows"></i> Window Store</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-     
-        <div id="team-area" class="section section-padding-extra">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <div class="section-heading">
-                            <h2 class="section-title">Our Team</h2>
-                            <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="team-members">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="team-member text-center wow animated fadeInUp" data-wow-duration="1.5s">
-                                <div class="member-mock"><img src="assets/img/client-team/member-1.jpg" alt="..."></div>
-                                <h4 class="member-name">Jone Doe</h4>
-                                <span class="member-work">Graphic Designer</span>
-                                <p>Lorem ipsum dolor sit amet, eteturadip isicing elitempor incidi dunt ut labore solidet doloredof.</p>
-                                <div class="member-connections">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+        <!-- FOOTER STARTS HERE -->
+        <footer id="footer">
+            <div class="footer-top"></div>
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="row show-grid">
+                        <div class="span12">
+                            <div class="row show-grid">
+                                <!-- FOOTER: LOGO -->
+                                <div class="span4">
+                                    <img alt="" class="footer-logo" src="img/grey_logo.png" />
+                                    <!-- FOOTER: ADDRESS -->
+                                    <address class="address">
+                                        <p><i class="icon-map-marker icon-large"></i>1800 North Central Expressway</p>
+                                        <p><i>&nbsp;</i>Suite 800</p>
+                                        <p><i>&nbsp;</i>Dallas, Texas 75231</p>
+                                        <p><i class="icon-phone icon-large"></i>Phone: (800) 655-7800</p>
+                                        <p><i class="icon-print icon-large"></i>Fax: (800) 655-7800</p>
+                                    </address>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="team-member text-center wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1.5s">
-                                <div class="member-mock"><img src="assets/img/client-team/member-2.jpg" alt="..."></div>
-                                <h4 class="member-name">Stephen</h4>
-                                <span class="member-work">Graphic Designer</span>
-                                <p>Lorem ipsum dolor sit amet, eteturadip isicing elitempor incidi dunt ut labore solidet doloredof.</p>
-                                <div class="member-connections">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <!-- FOOTER: ABOUT US -->
+                                <div class="span4 footer-center">
+                                    <h4 class="center-title">About Us</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus.</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="team-member text-center wow animated fadeInUp" data-wow-delay="1s" data-wow-duration="1.5s">
-                                <div class="member-mock"><img src="assets/img/client-team/member-3.jpg" alt="..."></div>
-                                <h4 class="member-name">Devid Muller</h4>
-                                <span class="member-work">Graphic Designer</span>
-                                <p>Lorem ipsum dolor sit amet, eteturadip isicing elitempor incidi dunt ut labore solidet doloredof.</p>
-                                <div class="member-connections">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="team-member text-center wow animated fadeInUp" data-wow-delay="1.5s" data-wow-duration="1.5s">
-                                <div class="member-mock"><img src="assets/img/client-team/member-4.jpg" alt="..."></div>
-                                <h4 class="member-name">Oliver Liam</h4>
-                                <span class="member-work">Graphic Designer</span>
-                                <p>Lorem ipsum dolor sit amet, eteturadip isicing elitempor incidi dunt ut labore solidet doloredof.</p>
-                                <div class="member-connections">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <!-- FOOTER: NAVIGATION LINKS -->
+                                <div class="span4 footer-right">
+                                    <h4 class="center-title">Navigate</h4>
+                                    <ul class="footer-navigate">
+                                        <li>
+                                            <a href="">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Features</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Pages</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Portfolio</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Blog</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Contact</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        
-        <div class="section cta-section cta-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h4 class="cta-heading wow animated fadeInLeft" data-wow-duration="1.5s">GEO is one of The Clean and Unique App Template in Themeforest</h4>
-                        <a class="btn btn-white wow animated fadeInRight" data-wow-duration="1.5s" href="#">Purchase Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div id="faq-area" class="section section-padding-extra">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <div class="section-heading">
-                            <h2 class="section-title">General FAQ</h2>
-                            <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="panel-group wow animated fadeInLeft" data-wow-duration="1.5s" id="faqs" role="tablist" aria-multiselectable="true">
-                            <div class="panel panel-default">
-                                <div class="panel-heading active" role="tab" id="faq1">
-                                    <h4 class="panel-title">
-                                        <a role="button" data-toggle="collapse" data-parent="#faqs" href="#ans1" aria-expanded="true" aria-controls="ans1">Q: What does it mean by faqs?</a>
-                                    </h4>
-                                </div>
-                                <div id="ans1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="faq1">
-                                    <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam.</p>
-                                        <p class="answered-on">Answer: Sunday, April 6th, 2017 at 3:10 pm</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="faq2">
-                                    <h4 class="panel-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faqs" href="#ans2" aria-expanded="false" aria-controls="ans2">Q: How to purchase with discount code?</a>
-                                    </h4>
-                                </div>
-                                <div id="ans2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq2">
-                                    <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam.</p>
-                                        <p class="answered-on">Answer: Sunday, April 6th, 2017 at 3:10 pm</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="faq3">
-                                    <h4 class="panel-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faqs" href="#ans3" aria-expanded="false" aria-controls="ans3">Q: How to fix uo when it doesn't work?</a>
-                                    </h4>
-                                </div>
-                                <div id="ans3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq3">
-                                    <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam.</p>
-                                        <p class="answered-on">Answer: Sunday, April 6th, 2017 at 3:10 pm</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="faq4">
-                                    <h4 class="panel-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#faqs" href="#ans4" aria-expanded="false" aria-controls="ans4">Q: How to make a conversation?</a>
-                                    </h4>
-                                </div>
-                                <div id="ans4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq4">
-                                    <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam.</p>
-                                        <p class="answered-on">Answer: Sunday, April 6th, 2017 at 3:10 pm</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <form id="ask-question" class="ask-question wow animated fadeInRight" data-wow-duration="1.5s" action="#" method="post">
-                            <div class="input-group">
-                                <span class="input-group-addon" id="name-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" name="name" class="form-control" placeholder="Your Name" aria-describedby="name-addon">
-                            </div>
-                            <div class="input-group">
-                                <span class="input-group-addon" id="email-addon"><i class="fa fa-envelope"></i></span>
-                                <input type="text" name="email" class="form-control" placeholder="Email" aria-describedby="email-addon">
-                            </div>
-                            <div class="input-group">
-                                <textarea name="question" class="form-control" placeholder="Your Question" rows="5"></textarea>
-                            </div>
-                            <div class="input-group">
-                                <button type="submit" class="btn">Ask Question</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-               <div id="subscribe-area" class="section section-padding section-bg subscribe-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                        <div class="section-heading no-sep wow animated fadeInDown" data-wow-duration="1.5s">
-                            <h2 class="section-title">Newsletter Subscribe</h2>
-                            <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available and is dummy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <form action="#" id="subscribeForm" class="subscribe-form wow animated fadeInUp" data-wow-duration="1.5s" method="post">
-                            <input type="email" name="email" placeholder="Enter your email address" required><button type="submit">Subscribe</button>
-                            <p class="newsletter-success"></p>
-                            <p class="newsletter-error"></p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-      
-        <div id="contact-area" class="section section-padding-extra contact-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <div class="section-heading">
-                            <h2 class="section-title">Leave a message</h2>
-                            <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <form id="contactForm" class="contact-form wow animated fadeInUp" data-wow-duration="1.5s" action="#" method="post">
-                            <div class="row">
-                                <div class="col-sm-6"><input id="name" type="text" name="name" placeholder="Name" required></div>
-                                <div class="col-sm-6"><input id="email" type="email" name="email" placeholder="Email" required></div>
-                                <div class="col-sm-12"><input id="subject" type="text" name="subject" placeholder="Subject" required></div>
-                                <div class="col-sm-12"><textarea id="message" placeholder="Message" rows="4" required></textarea></div>
-                                <div class="col-sm-12 text-center">
-                                    <button class="btn" type="submit">Submit Message</button>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <p class="input-success">We have received your mail, We will get back to you soon!</p>
-                                    <p class="input-error">Sorry, Message could not send! Please try again.</p>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="contact-infos">
-                        <div class="col-sm-4 text-center">
-                            <div class="contact-item wow animated fadeInUp" data-wow-duration="1.5s">
-                                <span class="contact-icon"><i class="fa fa-map-marker"></i></span>
-                                <p class="contact-detail">68 Dohava Strees, Lorem isput Spusts <br/>New York, United State</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center">
-                            <div class="contact-item wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1.5s">
-                                <span class="contact-icon"><i class="fa fa-envelope"></i></span>
-                                <p class="contact-detail">info@geo.com<br/>support@geo.com</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center">
-                            <div class="contact-item wow animated fadeInUp" data-wow-delay="1s" data-wow-duration="1.5s">
-                                <span class="contact-icon"><i class="fa fa-phone"></i></span>
-                                <p class="contact-detail">+123-456-7890 - Central Office<br/>+123-456-7890 - Fax</p>
-                            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row show-grid">
+                        <!-- FOOTER: COPYRIGHT TEXT -->
+                        <div class="span12">
+                            <p>reDesign Premium HTML Template by <a href="http://www.themeleaf.com">Themeleaf</a>. Copyright 2012</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="map-section" class="section">
-            <div class="google-map" id="location" data-lat="23.75043" data-lng="90.38844" data-zoom="16" style="height: 330px"></div>
-        </div>
-    </div>
-   
-    <footer>
-        <div class="container text-center">
-            <a class="logo-footer wow animated fadeInDown" data-wow-duration="1.5s" href="#"><img src="assets/img/template/logo-footer.png" alt="..."></a>
-            <div class="socials wow animated fadeIn" data-wow-duration="1.5s">
-                <a href="#" class="social"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="social"><i class="fa fa-twitter"></i></a>
-                <a href="#" class="social"><i class="fa fa-google-plus"></i></a>
-                <a href="#" class="social"><i class="fa fa-pinterest"></i></a>
-                <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
-            </div>
-            <p class="copyright wow animated fadeInUp" data-wow-duration="1.5s">&copy; GEO 2017. All Rights Reserved.</p>
-        </div>
-    </footer>
-    
-    <a id="to-top" class="to-top" href="#top-header" data-spy="affix" data-offset-top="500"><i class="fa fa-chevron-up"></i></a>
-    
-  
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/visible.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/jquery.countTo.js"></script>
-    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
-    <script src="assets/js/map.js"></script>
-    <script src="assets/js/custom.js"></script>
-</body>
+        </footer>
+</div>
+        <!-- END FOOTER -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+        <script type="text/javascript" src="js/jquery.isotope.js"></script>
+		<script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
+        <script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.0"></script>
+        <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+        <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+        <script type="text/javascript" src="js/revolution.custom.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+    </body>
 </html>

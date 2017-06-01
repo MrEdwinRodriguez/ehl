@@ -82,7 +82,7 @@ var ticket_number = "";
 
 function makeid() {
   
-     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
         var text = "";
      for (var i = 0; i < 10; i++)
          text += possible.charAt(Math.floor(Math.random() * possible.length));
