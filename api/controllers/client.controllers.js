@@ -72,6 +72,10 @@ module.exports.login = function(req, res) {
                 req.session.last_name = client.last_name;
                 req.session.user_email = client.email;
 
+                    res
+                        .status(200)
+                        .render('dashboard')
+
 
             } else {
                 console.log('password incorrect')

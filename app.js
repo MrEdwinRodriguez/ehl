@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var routes = require('./api/routes');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var exphbs = require('express-handlebars');
 
 //sequelize looks for models
 var models = require('./api/models')
@@ -20,12 +21,19 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
   
 app.set('port', 8000);
 
-
+ 
 // logs activity methods and url's
 app.use(function(req, res, next) {
     console.log(req.method, req.url)
     next();
 });
+
+// established views engine and allows to use .html instead of .handlebars
+app.engine('html', exphbs({
+    defaultLayout: 'main',
+    extname: '.html'
+}));
+app.set('view engine', 'html');
 
 
 // looks to the public folder for index.html
