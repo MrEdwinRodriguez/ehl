@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Holder page for Livox">
+    <meta name="author" content="Edwin Rodriguez">
+    <title>Livox Stas</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="/css/plugins/morris.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Martel|Oswald:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:700" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar-inverse navbar-fixed-top nav-bg-color" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand-change" href="index.html" ><img id='brand' src="/images/logo_without_bird.png"></a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <label><strong>
+                        <select class='btn btn-link back-btn menuButton'>
+                            <option selected>{{device}}</option>
+                            <option>Nexus 5p</option>
+                            <option>Galaxy S5</option>
+                            <option>iPad</option>
+                        </select></strong>
+                    </label>
+                </li>
+
+                    <li class="dropdown">
+                        <button onclick="goBack()" type="button" class='btn btn-link back-btn menuButton mainLinks'><strong>Go Back</strong></button>
+                    </li>
+ 
+                <li class="dropdown">
+                    <button onclick="logout()" type="button" class='btn btn-link back-btn menuButton' id='logout'><strong>Logout</strong></button>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <div id='holderDiv'>
+                        <li>
+                            <img src="/images/thumbnail.jpg" alt="Holder Profile Image" id='holderImg'>
+
+
+                        </li>
+                    </div>
+                    <li>
+                        <h4 class = 'sectionTitle'>Welcome</h4>
+                        <div class='userInfo'>{{first_name}} {{last_name}}</div>
+                    </li>
+                    <li>
+                        <h4 class = 'sectionTitle'>Role:</h4>
+                        <div class='userInfo'>{{role}}</div>
+                    </li>
+                    <li>
+                        <h4 class = 'sectionTitle'>LIVOX</h4>
+                        <div class='sectionTitle'>"Our purpose is to empower disabled people to express themselves, have fun and interact."</div>
+                    </li>                    
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-list-alt" aria-hidden="true"></i> Users registered in this device</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped " id='listOfUsers'>
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>User Name</th>
+                                                </a>
+                                                <th>Total Evaluations</th>
+                                                <th>Diagnosis</th>
+                                                <th>Last Evaluation
+                                                    <br> (YYYY-MM-DD)
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{#each users}}
+                                            <tr>
+                                                <td> {{this.id}}</td>
+                                                <td><a href="../users/{{this.id}}" id={{this.id}} >{{this.first_name}} {{this.last_name}}</a></td>
+                                                <td> {{this.counter}}</td>
+                                                <td> {{this.disability}}</td>
+                                                <td> {{this.last_date}}</td>
+                                                {{/each}}
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-dashboard"></i> Evaluation</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <h1>Select a User in the Table to see a list of all of their evaluations</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/mainScript.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="/js/plugins/morris/raphael.min.js"></script>
+    <script src="/js/plugins/morris/morris.min.js"></script>
+    <script src="/js/plugins/morris/morris-data.js"></script>
+</body>
+
+</HTML>
