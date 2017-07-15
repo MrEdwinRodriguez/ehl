@@ -19,7 +19,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
     })
 
   
-app.set('port', 8000);
+app.set('port', 8000); 
 
  
 // logs activity methods and url's
@@ -51,6 +51,7 @@ app.use(session({
 
 
 app.use('/api', routes);
+require('./public/routes/htmlRoutes.js')(app);
 
 
 var server = app.listen(app.get('port'), function() {

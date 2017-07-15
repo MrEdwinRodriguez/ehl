@@ -58,7 +58,7 @@ module.exports.login = function(req, res) {
                 .redirect('/')
         }
 
-
+console.log(client)
         bcrypt.compare(password, client.password, function(err, result) {
 
             console.log('result: ' + result)
@@ -70,11 +70,15 @@ module.exports.login = function(req, res) {
                 req.session.client_id = client.id;
                 req.session.first_name = client.first_name;
                 req.session.last_name = client.last_name;
-                req.session.user_email = client.email;
+                req.session.client_email = client.email;
 
-                    res
-                        .status(200)
-                        .render('dashboard')
+                res
+                    .status(200)
+                    .redirect('/client')
+
+                    // res
+                    //     .status(200)
+                    //     .render('dashboard')
 
 
             } else {
