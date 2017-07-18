@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-var ctrlClient = require('../../api/controllers/client.controllers.js');
+var ctrlEvents = require('../../api/controllers/events.controller.js');
 var models = require('../../api/models')
 
 //html routes
@@ -39,19 +39,27 @@ module.exports = function(app) {
 
     app.get('/client', function(req, res) {
 
-        // var user_data;
-        // var user_data_id = [];
+     
+        var client_data = [];
 
 
-        // ctrlUsers.holderGetAllUsers(req.session.holder_id, function(data) {
- 
-        //     user_data = data;
+        ctrlEvents.eventsClientGetAll(req.session.client_id, function(data) {
 
-        //     for (i = 0; i < user_data.length; i++) {
-        //         user_data_id.push(user_data[i].id);
-        //     }
+             function Event(name, date, location, sold, allotment, revenue) {
+                    this.eventName = name;
+                    this.date = date;
+                    this.location = location;
+                    this.sold = sold;
+                    this.allotment = allotment;
+                    this.revenue = revenue
+                }            
 
-        // }).then(function() {
+            for(i=0; i<data.length; i++){
+                var myEvent = new Event(data[i].event_name, data[i].event_date, data[i].event_venue, data[i].sold, data[i].ticket_allotment, data[i].revenue) 
+                client_data.push(myEvent);
+            }
+   
+                    }).then(function() {
         //     ctrlEvaluations.evaluationsLastDate(user_data_id, function(last_date) {
 
         //         //adds last_date to user data obj
@@ -75,7 +83,7 @@ module.exports = function(app) {
         //         }
 
 
-                    console.log('rendering')
+                    console.log(client_data)
                 
                     res
                         .status(200)
@@ -90,7 +98,7 @@ module.exports = function(app) {
                 // }
 
         //     })
-        // })
+        })
 
     });
 

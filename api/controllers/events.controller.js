@@ -48,10 +48,10 @@ module.exports.createEvent = function(req, res){
 
 
 //all evetents associated with client
-module.exports.eventsClientGetAll = function(req, res){
+module.exports.eventsClientGetAll = function(req, cb){
 	console.log('view all client events')
-
-        var clientId = req.params.clientId;
+    console.log(req)
+        var clientId = req;
         console.log(clientId)
          
 
@@ -64,10 +64,12 @@ module.exports.eventsClientGetAll = function(req, res){
            
         }],
     }).then(function(data) {
+        console.log(data)
 
-    res
-        .status(202)
-        .json(data)
+        cb(data)
+    // res
+    //     .status(202)
+    //     .json(data)
     
 
     })
