@@ -39,72 +39,44 @@ module.exports = function(app) {
 
     app.get('/client', function(req, res) {
 
-     
         var client_data = [];
 
- 
         ctrlEvents.eventsClientGetAll(req.session.client_id, function(data) {
 
-             function Event(id, name, date, location, sold, allotment, revenue) {
-                    this.id= id;
-                    this.eventName = name;
-                    this.date = date;
-                    this.location = location;
-                    this.sold = sold;
-                    this.allotment = allotment;
-                    this.revenue = revenue
-                }            
+            function Event(id, name, date, location, sold, allotment, revenue) {
+                this.id = id;
+                this.eventName = name;
+                this.date = date;
+                this.location = location;
+                this.sold = sold;
+                this.allotment = allotment;
+                this.revenue = revenue
+            }
 
-            
-
-            for(i=0; i<data.length; i++){
+            for (i = 0; i < data.length; i++) {
 
                 var date = new Date(data[i].event_date);
-                var convertedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();                
-                
-                var myEvent = new Event(data[i].id, data[i].event_name, convertedDate, data[i].event_venue, data[i].sold, data[i].ticket_allotment, data[i].revenue) 
+                var convertedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+
+                var myEvent = new Event(data[i].id, data[i].event_name, convertedDate, data[i].event_venue, data[i].sold, data[i].ticket_allotment, data[i].revenue)
                 client_data.push(myEvent);
             }
+
+        }).then(function() {
+
+            console.log(client_data)
+
+            res
+                .status(200)
+                .render('dashboard', {
+                    email: req.session.client_email,
+                    id: req.session.client_id,
+                    first_name: req.session.first_name,
+                    last_name: req.session.last_name,
+                    client: client_data
+                })
+
    
-                    }).then(function() {
-        //     ctrlEvaluations.evaluationsLastDate(user_data_id, function(last_date) {
-
-        //         //adds last_date to user data obj
-        //         for (i = 0; i < last_date.length; i++) {
-        //             console.log(last_date[i].date)                  
-        //             user_data[i].last_date = last_date[i].date
-    
-        //         }
-
-        //     })
-        // }).then(function() {
-        //     ctrlEvaluations.evaluationsCount(user_data_id, function(evals) {
-
-        //         console.log('evals')
-        //         console.log(evals)
-
-              
-        //             //turn array into array of object
-        //         for (i = 0; i < user_data.length; i++) {
-        //             user_data[i].counter = evals[i].count
-        //         }
-
-
-                    console.log(client_data)
-                
-                    res
-                        .status(200)
-                        .render('dashboard', {
-                            email: req.session.client_email,
-                            id: req.session.client_id,
-                            first_name: req.session.first_name,
-                            last_name: req.session.last_name,
-                            client: client_data
-                        })
-
-                // }
-
-        //     })
         })
 
     });
