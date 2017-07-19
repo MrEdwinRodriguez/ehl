@@ -62,11 +62,11 @@ module.exports = {
       ticket_allotment: {
         type: Sequelize.INTEGER
       },
-      gender: {
-        type: Sequelize.STRING
-      },
-      dob: {
+      sold: {
         type: Sequelize.INTEGER
+      },
+      revenue: {
+        type: Sequelize.FLOAT
       },
       income: {
         type: Sequelize.STRING

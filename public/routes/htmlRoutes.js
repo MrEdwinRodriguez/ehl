@@ -42,10 +42,11 @@ module.exports = function(app) {
      
         var client_data = [];
 
-
+ 
         ctrlEvents.eventsClientGetAll(req.session.client_id, function(data) {
 
-             function Event(name, date, location, sold, allotment, revenue) {
+             function Event(id, name, date, location, sold, allotment, revenue) {
+                    this.id= id;
                     this.eventName = name;
                     this.date = date;
                     this.location = location;
@@ -54,8 +55,14 @@ module.exports = function(app) {
                     this.revenue = revenue
                 }            
 
+            
+
             for(i=0; i<data.length; i++){
-                var myEvent = new Event(data[i].event_name, data[i].event_date, data[i].event_venue, data[i].sold, data[i].ticket_allotment, data[i].revenue) 
+
+                var date = new Date(data[i].event_date);
+                var convertedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();                
+                
+                var myEvent = new Event(data[i].id, data[i].event_name, convertedDate, data[i].event_venue, data[i].sold, data[i].ticket_allotment, data[i].revenue) 
                 client_data.push(myEvent);
             }
    
@@ -91,8 +98,8 @@ module.exports = function(app) {
                             email: req.session.client_email,
                             id: req.session.client_id,
                             first_name: req.session.first_name,
-                            last_name: req.session.last_name
-                            // users: user_data
+                            last_name: req.session.last_name,
+                            client: client_data
                         })
 
                 // }

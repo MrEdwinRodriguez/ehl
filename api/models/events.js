@@ -72,12 +72,12 @@ module.exports = function(sequelize, DataTypes) {
             type: Sequelize.INTEGER,
             allowNull: false
      },
-    gender: {
-            type: Sequelize.CHAR(10),
+    sold: {
+            type: Sequelize.INTEGER,
             allowNull: true
     },
-    dob: {
-            type: Sequelize.CHAR(10),
+    revenue: {
+            type: Sequelize.FLOAT,
             allowNull: true
     },
     income: {
