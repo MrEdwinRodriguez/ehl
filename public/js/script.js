@@ -12,3 +12,15 @@
     
     
     }
+
+
+
+$(document).ready(function() {
+
+    $("#createEvent").click(function() {
+
+        console.log('hello')
+    })
+
+   
+})     

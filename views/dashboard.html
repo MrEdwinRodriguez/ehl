@@ -206,7 +206,7 @@
 
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
+                        <button id='createEvent'>
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -218,7 +218,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </button>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-green">
@@ -251,7 +251,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
+                        <button >
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -263,7 +263,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <!-- /.row -->
@@ -290,8 +290,8 @@
                                             {{#each client}}
                                             <tr>
                                                 <td> {{this.id}}</td>
-                                                <td><a href="../events/{{this.id}}" id={{this.id}}>{{this.eventName}}</a></td>
-                                                <td><a href="../events/{{this.id}}" id={{this.id}}> {{this.date}}</a></td>
+                                                <td><a href="../events/eventid=87746{{this.id}}" id={{this.id}}>{{this.eventName}}</a></td>
+                                                <td><a href="../events/eventid=87746{{this.id}}" id={{this.id}}> {{this.date}}</a></td>
                                                 <td> {{this.location}}</td>
                                                 <td> {{this.allotment}}</td>
                                                 <td> {{this.sold}}</td>
@@ -318,6 +318,7 @@
 
     <!-- jQuery -->
     <script src="/js/jquery.js"></script>
+    <script src="/js/script.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
