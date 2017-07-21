@@ -99,51 +99,44 @@ module.exports = function(app) {
                 model: models.Tickets
                 // include: [models.Tickets]
             }]
-        }).then(function(event) {
-            console.log(event)
-            console.log('event information')
+        // }).then(function(event) {
+        //     console.log(event)
+        //     console.log('event information')
  
-            ctrlEvaluations.evaluationsGetAll(user_data, function(evals) {
-                console.log('get all evals has been called')
+        //     ctrlEvaluations.evaluationsGetAll(user_data, function(evals) {
+        //         console.log('get all evals has been called')
 
-                evaluations = evals
+                // evaluations = evals
 
             }).then(function(evals) {
 
-                ctrlEvaluations.evaluationsLastDate(user_data, function(last_date) {
+                // ctrlEvaluations.evaluationsLastDate(user_data, function(last_date) {
 
-                    var date = new Date(user[0].birthdate);
-                    date = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+                //     var date = new Date(user[0].birthdate);
+                //     date = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
                         
 
                     res
                         .status(200)
-                        .render('users', {
-                            device: req.session.device,
-                            first_name: user[0].first_name,
-                            last_name: user[0].last_name,
-                            diagnosis: user[0].disability,
-                            interest: user[0].interests,
-                            userId: user[0].id,
-                            today: today,
-                            birthday: date,
-                            gaurdian: user[0].responsible_1,
-                            gaurdian_email: user[0].responsible_1_email,
-                            gaurdian_phone: user[0].responsible_1_phone_number,
-                            gaurdian2: user[0].responsible_2,
-                            gaurdian2_email: user[0].responsible_2_email,
-                            gaurdian2_phone: user[0].responsible_2_phone_number,
-                            age: age,
-                            last_eval: last_date[0].date,
-                            evaluations: evaluations
+                        .render('events', {
+                            device: 'testing',
+                            // first_name: user[0].first_name,
+                            // last_name: user[0].last_name,
+                            // diagnosis: user[0].disability,
+                            // interest: user[0].interests,
+                            // userId: user[0].id,
+                            // today: today,
+                            // birthday: date,
+                            // last_eval: last_date[0].date,
+                            // evaluations: evaluations
                         });
                         
 
 
                     
-                })
+                // })
 
-            })
+            // })
         })
 
     })    
