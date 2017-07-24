@@ -10,7 +10,7 @@
         }
         document.getElementById(box).style.display = vis;
     
-    
+     
     }
 
 

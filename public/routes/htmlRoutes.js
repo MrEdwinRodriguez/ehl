@@ -139,7 +139,33 @@ module.exports = function(app) {
             // })
         })
 
-    })    
+    })
+
+    app
+        .get('/events/createEvents', function(req, res) {
+            res
+                .status(200)
+                .render('createEvent', {
+                    email: req.session.client_email,
+                    id: req.session.client_id,
+                    first_name: req.session.first_name,
+                    last_name: req.session.last_name
+                })
+
+        });
+
+    app
+        .get('/mypatrons', function(req, res) {
+            res
+                .status(200)
+                .render('contacts', {
+                    email: req.session.client_email,
+                    id: req.session.client_id,
+                    first_name: req.session.first_name,
+                    last_name: req.session.last_name
+                })
+
+        });                
 
 
 }
