@@ -156,14 +156,38 @@ module.exports = function(app) {
 
     app
         .get('/mypatrons', function(req, res) {
-            res
-                .status(200)
-                .render('contacts', {
-                    email: req.session.client_email,
-                    id: req.session.client_id,
-                    first_name: req.session.first_name,
-                    last_name: req.session.last_name
-                })
+
+
+        return models.Events.findAll({
+            where: {
+                ClientId: req.session.client_id
+            },
+            include: [{
+                // model: models.Tickets
+                model: models.Tickets
+                // include: [models.Patrons]
+            }]
+
+            }).then(function(evals) {
+
+                // console.log(evals)
+                console.log('line 174!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11')
+                console.log(evals[0].Tickets)
+ 
+                        res
+                            .status(200)
+                            .render('contacts', {
+                                email: req.session.client_email,
+                                id: req.session.client_id,
+                                first_name: req.session.first_name,
+                                last_name: req.session.last_name
+                            })
+
+        })
+
+
+
+
 
         });                
 

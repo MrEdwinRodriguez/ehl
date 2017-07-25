@@ -61,6 +61,8 @@ module.exports.eventsClientGetAll = function(req, cb){
         },
         include: [{
             model: models.Clients
+            // model: models.Events
+            // model: models.Patrons
            
         }],
     }).then(function(data) {
