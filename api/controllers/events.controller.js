@@ -2,7 +2,7 @@ var mysql= require('mysql');
 var models = require('../models');
 
 
-
+ 
 module.exports.createEvent = function(req, res){
 	console.log('create events')
 	console.log(req.body)

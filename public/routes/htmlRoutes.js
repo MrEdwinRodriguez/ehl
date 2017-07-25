@@ -168,12 +168,43 @@ module.exports = function(app) {
                 // include: [models.Patrons]
             }]
 
-            }).then(function(evals) {
+            }).then(function(events) {
+                var patronsArr = [];
 
-                // console.log(evals)
                 console.log('line 174!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11')
-                console.log(evals[0].Tickets)
- 
+                console.log('patron: ' + events[0].Tickets[0].PatronId)
+
+                for(i=0; i< events.length; i++){
+
+                    for(y=0; y<events[i].Tickets.length; y++){
+                        console.log(events[i].Tickets[y].PatronId)
+                        patronsArr.push(events[i].Tickets[y].PatronId)
+                    } 
+
+                    
+                }
+                console.log(patronsArr)
+                return patronsArr
+            }).then(function(patrons) {
+                console.log(patrons)
+
+                return models.Patrons.findAll({
+                    where: {
+                        id: patrons
+                    }
+                    // include: [{
+                    //     // model: models.Tickets
+                    //     model: models.Tickets
+                    //     // include: [models.Patrons]
+                    // }]
+                })
+
+            }).then(function(patronInfo) {
+
+                console.log(patronInfo)
+
+
+
                         res
                             .status(200)
                             .render('contacts', {

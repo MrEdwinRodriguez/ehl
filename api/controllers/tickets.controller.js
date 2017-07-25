@@ -3,7 +3,7 @@ var models = require('../models');
 
 module.exports.ticketsForEvent = function(req, res) {
   console.log('tickets for event')
-
+ 
     
     var eventId = req.params.eventId;
 
