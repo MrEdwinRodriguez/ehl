@@ -192,26 +192,36 @@ module.exports = function(app) {
                     where: {
                         id: patrons
                     }
-                    // include: [{
-                    //     // model: models.Tickets
-                    //     model: models.Tickets
-                    //     // include: [models.Patrons]
-                    // }]
                 })
 
             }).then(function(patronInfo) {
+               
+                var patrons_data = [];
 
-                console.log(patronInfo)
+                 for (i=0; i<patronInfo.length; i++){
+
+                    function Patron(id, first, last, email, phone, gender) {
+                        this.id=id
+                        this.firstName = first;
+                        this.lastName = last;
+                        this.email = email;
+                        this.phoneNumber = phone;
+                        this.gender = gender
+                    }
+                    var myPatron = new Patron(patronInfo[i].id, patronInfo[i].first_name, patronInfo[i].last_name, patronInfo[i].email, patronInfo[i].phone_number, patronInfo[i].gender);
+                    patrons_data.push(myPatron)
+                 }
 
 
-
+                 console.log(patrons_data)
                         res
                             .status(200)
                             .render('contacts', {
                                 email: req.session.client_email,
                                 id: req.session.client_id,
                                 first_name: req.session.first_name,
-                                last_name: req.session.last_name
+                                last_name: req.session.last_name,
+                                patron: patrons_data
                             })
 
         })

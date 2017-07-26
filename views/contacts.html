@@ -9,7 +9,7 @@
     <meta name="description" content="Events, Tickets, concerts, shows, live">
     <meta name="author" content="Edwin Rodriguez">
 
-    <title>Contacts</title>
+    <title>Event Horizon</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -213,7 +213,7 @@
                                         <i class="fa fa-comments fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">Create Event</div>
+                                        <div class="huge"><a href="/events/createEvents">Create Event</a></div>
                                         <!-- <div>Create Event</div> -->
                                     </div>
                                 </div>
@@ -228,7 +228,7 @@
                                         <i class="fa fa-tasks fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">View Contacts</div>
+                                        <div class="huge"><a href="/mypatrons">View Contacts</a></div>
                                         <!-- <div>View</div> -->
                                     </div>
                                 </div>
@@ -274,87 +274,30 @@
     
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    
-                                                                <form method='post' action="/api/events/create">
-                                <div class="login-form">
-                                    <div class="control-group">
-                                        <input type="text" class="login-field" placeholder="Event Name" id="event_name" name='event_name' required> </div>
-                                    <div class="control-group">
-                                        <input type="date" class='login-field' name="event_date" id='event_date' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="time" class='login-field' name="event_time" id='event_time' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="text" class="login-field" placeholder="venue" id="venue" name='venue' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="text" class="login-field" placeholder="Address" id="address" name='address' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="text" class="login-field" placeholder="City" id="city" name='city' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="text" class="login-field" placeholder="State" id="state" name='state' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="text" class="login-field" placeholder="Zip" id="zipcode" name='zipcode' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="text" class="login-field" placeholder="Event Contact" id="event_contact" name='event_contact' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="email" class="login-field" placeholder="Email" id="event_contact_email" name='event_contact_email' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="tel" class="login-field" placeholder="Phone Number" id="event_contact_phone_number" name='event_contact_phone_number' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="tel" class="login-field" placeholder="Decription" id="description" name='description' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="tel" class="login-field" placeholder="Event Website" id="website" name='website' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="number" class="login-field" placeholder="Online Price" id="online_price" name='online_price' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="number" class="login-field" placeholder="Door Price" id="door_price" name='door_price' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="date" class="login-field" placeholder="Ticket Sales Start" id="tickets_start" name='tickets_start' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="date" class="login-field" placeholder="Tickets End" id="tickets_end" name='tickets_end' required>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="number" class="login-field" placeholder="Allotment" id="allotment" name='allotment' required>
-                                    </div>
-                                    <div>Optional Info to Collect</div>
-                                     <div class="control-group">
-                                        <input type="checkbox" name="gender" id='gender'>Gender<br>
-                                    </div>
-                                     <div class="control-group">
-                                        <input type="checkbox" name="dob" id='dob'>Date of Birth<br>
-                                    </div>
-                                     <div class="control-group">
-                                        <input type="checkbox" name="income_bracket" id='income_bracket'>Income Bracket<br>
-                                    </div>
-                                     <div class="control-group">
-                                        <input type="checkbox" name="education" id='education'>Education Level<br>
-                                    </div> 
-                                     <div class="control-group">
-                                        <input type="checkbox" name="ethnicity" id='ethnicity'>Ethnicity<br>
-                                    </div>  
-                                     <div class="control-group">
-                                        <input type="checkbox" name="religion" id='religion'>Religion<br>
-                                    </div>                                                                                                                                                 
-                                    <button class="btn btn-primary btn-large btn-block" href="client.html" type='submit'>login</button>
-                                </div>
-                            </form>
-
-
-
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Email</th>
+                                                <th>Phone Number</th>
+                                                <th>Gender</th>                                            
+                                            </tr>
+                                        </thead>
+                                       <tbody>
+                                            {{#each patron}}
+                                            <tr>
+                                                <td> {{this.id}}</td>
+                                                <td>{{this.firstName}}</td>
+                                                <td> {{this.lastName}}</td>
+                                                <td> {{this.email}}</td>
+                                                <td> {{this.phoneNumber}}</td>
+                                                <td> {{this.gender}}</td>                      
+                                                {{/each}}
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
