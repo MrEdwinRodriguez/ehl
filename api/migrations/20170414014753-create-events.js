@@ -65,6 +65,12 @@ module.exports = {
       sold: {
         type: Sequelize.INTEGER
       },
+      gender: {
+        type: Sequelize.FLOAT
+      },
+      dob: {
+        type: Sequelize.STRING
+      },      
       revenue: {
         type: Sequelize.FLOAT
       },

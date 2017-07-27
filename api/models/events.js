@@ -80,6 +80,14 @@ module.exports = function(sequelize, DataTypes) {
             type: Sequelize.FLOAT,
             allowNull: true
     },
+    gender: {
+            type: Sequelize.CHAR(10),
+            allowNull: true
+    },
+    dob: {
+            type: Sequelize.CHAR(10),
+            allowNull: true
+    },        
     income: {
             type: Sequelize.CHAR(10),
             allowNull: true
