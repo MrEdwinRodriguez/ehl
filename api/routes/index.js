@@ -36,7 +36,7 @@ router
     .route('/events/create')
     .post(eventsCtrl.createEvent);    
 
-
+ 
 // router
 //     .route('/events/:eventsId')
 //     .get(eventsCtrl.eventsGetOne); 

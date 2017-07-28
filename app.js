@@ -7,6 +7,8 @@ var routes = require('./api/routes');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var exphbs = require('express-handlebars');
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
 
 //sequelize looks for models
 var models = require('./api/models')
