@@ -71,6 +71,7 @@ console.log(client)
                 req.session.first_name = client.first_name;
                 req.session.last_name = client.last_name;
                 req.session.client_email = client.email;
+                console.log('id' + req.session.client_id)
 
                 res
                     .status(200)

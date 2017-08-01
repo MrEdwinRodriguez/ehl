@@ -142,7 +142,8 @@ module.exports = function(app) {
     })
 
     app
-        .get('/events/createEvents', function(req, res) {
+        .get('/events/createevents', function(req, res) {
+            console.log(req.session.client_id)
             res
                 .status(200)
                 .render('createEvent', {
@@ -153,6 +154,22 @@ module.exports = function(app) {
                 })
 
         });
+
+    app
+        .get('/events/createevent/flyer', function(req, res) {
+            
+            console.log(req.session.client_id)
+
+            res
+                .status(200)
+                .render('flyer', {
+                    email: req.session.client_email,
+                    id: req.session.client_id,
+                    first_name: req.session.first_name,
+                    last_name: req.session.last_name
+                })
+
+        });        
 
     app
         .get('/mypatrons', function(req, res) {
