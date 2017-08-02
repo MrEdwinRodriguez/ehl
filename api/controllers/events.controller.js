@@ -1,5 +1,9 @@
 var mysql= require('mysql');
 var models = require('../models');
+var express = require('express');
+var router = express.Router();
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
 
 
 
@@ -48,6 +52,13 @@ module.exports.createEvent = function(req, res){
 
 }
 
+
+//uploads flyer for event
+module.exports.createEventFlyer = function(req, res, next){
+    console.log('uploading flyer')
+    console.log(req.files)
+        res.send(res.files)
+}
 
 //all evetents associated with client
 module.exports.eventsClientGetAll = function(req, cb){
