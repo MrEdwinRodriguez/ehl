@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var multer  = require('multer')
-var upload = multer({ dest: '../../public/uploads/' })
+var upload = multer({ dest: 'uploads/' })
 
 var eventsCtrl = require('../controllers/events.controller.js');
 var clientCtrl = require('../controllers/client.controllers.js');
@@ -39,8 +39,8 @@ router
     .post(eventsCtrl.createEvent);
 
 router
-    .route('/events/flyer', upload.single('avatar'))
-    .post(eventsCtrl.createEventFlyer);   
+    .route('/events/flyer')
+    .post(upload.single("eventFlyer"), eventsCtrl.createEventFlyer);   
 
  
 // router

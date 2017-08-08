@@ -56,8 +56,8 @@ module.exports.createEvent = function(req, res){
 //uploads flyer for event
 module.exports.createEventFlyer = function(req, res, next){
     console.log('uploading flyer')
-    console.log(req.files)
-        res.send(res.files)
+    console.log(req.file)
+        res.send(res.file)
 }
 
 //all evetents associated with client
