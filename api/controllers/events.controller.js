@@ -3,7 +3,8 @@ var models = require('../models');
 var express = require('express');
 var router = express.Router();
 var multer  = require('multer')
-var upload = multer({ dest: 'uploads/' })
+var upload = multer({ dest: 'uploads' })
+var fs = require('fs');
 
 
 
@@ -57,7 +58,19 @@ module.exports.createEvent = function(req, res){
 module.exports.createEventFlyer = function(req, res, next){
     console.log('uploading flyer')
     console.log(req.file)
-        res.send(res.file)
+    //     res.send(res.file)
+  //     var file = __dirname + '/' + req.file.filename;
+  // fs.rename(req.file.path, file, function(err) {
+  //   if (err) {
+  //     console.log(err);
+  //     res.send(500);
+  //   } else {
+  //     res.json({
+  //       message: 'File uploaded successfully',
+  //       filename: req.file.filename
+  //     });
+  //   }
+  // });
 }
 
 //all evetents associated with client

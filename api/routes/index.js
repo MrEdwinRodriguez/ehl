@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var multer  = require('multer')
-var upload = multer({ dest: 'uploads/' })
+var upload = multer({ dest: 'uploads' })
+var fs = require('fs');
+
 
 var eventsCtrl = require('../controllers/events.controller.js');
 var clientCtrl = require('../controllers/client.controllers.js');
