@@ -14,7 +14,7 @@ module.exports.createEvent = function(req, res){
 	console.log('create events')
 	console.log(req.body)
 	console.log("id: " +req.session.client_id)
-
+    console.log("Uploaded file: ", req.file); //File that was uploaded.
   return models.Events.create({ 
         event_name: req.body.event_name,
         event_date: req.body.event_date,
@@ -34,6 +34,7 @@ module.exports.createEvent = function(req, res){
         ticket_sales_end: req.body.tickets_end,
         ticket_allotment: req.body.allotment,
         ClientId: req.session.client_id,
+        event_flyer:  req.file.filename,
 
         dob: req.body.dob,
         gender: req.body.gender,
@@ -43,13 +44,21 @@ module.exports.createEvent = function(req, res){
         religion: req.body.religion
 
     
-  }).then(function() {
-
+  }).then(function(status) {
+      console.log('---------After creating event------')
+    console.log(status);
   console.log('redirecting')
         res
             .status(200)
-            .redirect('/events/createEvent/flyer') 
-            })   
+           // .redirect('/events/list') 
+           // 
+            .render('events', {
+                            event:status['dataValues'],
+                            device: 'testing',
+                             first_name: 'Rana',
+                             last_name: 'Arsal',
+            });    
+        })   
 
 }
 

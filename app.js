@@ -55,6 +55,11 @@ app.use(session({
 app.use('/api', routes);
 require('./public/routes/htmlRoutes.js')(app);
 
+app.get('/uploads/:filename', function (req, res) {
+    res.sendFile(req.params.filename, {
+        root: path.join(__dirname, 'uploads')
+    });
+});
 
 var server = app.listen(app.get('port'), function() {
     var port = server.address().port;

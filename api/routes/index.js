@@ -1,9 +1,27 @@
 var express = require('express');
 var router = express.Router();
 var multer  = require('multer')
-var upload = multer({ dest: 'uploads' })
+//var upload = multer({ dest: 'uploads' })
 var fs = require('fs');
 
+var path = require('path');
+const crypto = require('crypto');
+var userImagesPath = path.resolve(__dirname, "../../uploads");
+/**
+ * Configuration of multer to save imagesStorage
+ */
+var imagesStorage = multer.diskStorage({
+    // used to determine within which folder the uploaded files should be stored.
+    destination: function(req, file, callback) {
+        callback(null, userImagesPath);
+    },
+    filename: function(req, file, callback) {
+        //callback(null, file.originalname);
+        callback(null,crypto.randomBytes(20).toString('hex')+path.extname(file.originalname)) //appending extension
+    }
+});
+///Configuring file system storage (recomended to store images and files)
+var uploadImages = multer({ storage: imagesStorage });
 
 var eventsCtrl = require('../controllers/events.controller.js');
 var clientCtrl = require('../controllers/client.controllers.js');
@@ -38,11 +56,11 @@ router
 
 router
     .route('/events/create')
-    .post(eventsCtrl.createEvent);
+    .post(uploadImages.single("eventFlyer"),eventsCtrl.createEvent);
 
-router
-    .route('/events/flyer')
-    .post(upload.single("eventFlyer"), eventsCtrl.createEventFlyer);   
+// router
+//     .route('/events/flyer')
+//     .post(uploadImages.single("eventFlyer"), eventsCtrl.createEventFlyer);   
 
  
 // router

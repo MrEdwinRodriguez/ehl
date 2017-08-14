@@ -210,6 +210,9 @@
     
                             <div class="panel-body">
                                 <div class="table-responsive">
+                                    <a href="/events/createevents" ><input type="button" value="Create Event" /></a>
+                                    <br></br>
+                                    <!-- For one event only  -->
                                     <table class="table table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
@@ -219,21 +222,46 @@
                                                 <th>Event Location</th>
                                                 <th>Allotment</th>
                                                 <th>Sold</th>
-                                                <th>Revenue</th>                                                
+                                                <th>Revenue</th>
+                                                <th>Flyer</th>                                                 
                                             </tr>
                                         </thead>
                                        <tbody>
-                                            {{#each client}}
+                                           {{#if event}} 
+                                            <tr>
+                                                
+                                                <td> {{event.id}}</td>
+                                                <td><a href="/events/{{event.id}}/{{event.event_name}}" id={{event.id}}>{{event.event_name}}</a></td>
+                                                <td> {{event.event_date}}</td>
+                                                <td> {{event.event_venue}}</td>
+                                                <td> {{event.ticket_allotment}}</td>
+                                                <td> {{event.sold}}</td>
+                                                <td> ${{event.revenue}}</td>
+                                                <td> <img src="/uploads/{{event.event_flyer}}" height="100" width="100"/></td>                    
+                                            </tr>
+                                            <tr>
+                                                <a href="/events/list" > < back</a>
+                                            </tr>
+                                            {{/if}}   
+                                            <!-- For all events  -->
+                                    {{#if events}}
+                                   
+                                           {{#each events}}
                                             <tr>
                                                 <td> {{this.id}}</td>
-                                                <td><a href="../events/eventid=87746{{this.id}}" id={{this.id}}>{{this.eventName}}</a></td>
-                                                <td><a href="../events/eventid=87746{{this.id}}" id={{this.id}}> {{this.date}}</a></td>
-                                                <td> {{this.location}}</td>
-                                                <td> {{this.allotment}}</td>
+                                                <td><a href="/events/{{this.id}}/{{this.event_name}}" id={{this.id}}>{{this.event_name}}</a></td>
+                                                <td> {{this.event_date}}</td>
+                                                <td> {{this.event_venue}}</td>
+                                                <td> {{this.ticket_allotment}}</td>
                                                 <td> {{this.sold}}</td>
-                                                <td> ${{this.revenue}}</td>                        
-                                                {{/each}}
+                                                <td> ${{this.revenue}}</td>
+                                                <td> <img src="/uploads/{{this.event_flyer}}" height="100" width="100"/></td>                     
+                                                
                                             </tr>
+                                                {{/each}}
+                                        </tbody>
+                                    </table>
+                                    {{/if}}   
                                         </tbody>
                                     </table>
                                 </div>

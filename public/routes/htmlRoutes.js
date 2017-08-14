@@ -80,25 +80,19 @@ module.exports = function(app) {
         })
 
     });
- 
-    app.get('/events/eventid=87746:eventId', function(req, res) {
-
-        console.log('events/:EventId/:eventName has been called')
-
-
-        var eventId = req.params.eventId;
-        console.log(eventId)
+    app.get('/events/list', function(req, res) {
+        console.log('events/list has been called');
         // var last_date = req.query.last_eval
   
 
         return models.Events.findAll({
-            where: {
-                id: eventId
-            },
-            include: [{
-                model: models.Tickets
-                // include: [models.Tickets]
-            }]
+            //where: {
+            //    id: eventId
+            //}//,
+            // include: [{
+            //     model: models.Tickets
+            //     // include: [models.Tickets]
+            // }]
         // }).then(function(event) {
         //     console.log(event)
         //     console.log('event information')
@@ -109,7 +103,8 @@ module.exports = function(app) {
                 // evaluations = evals
 
             }).then(function(evals) {
-
+                console.log('----Got this event-------');
+                console.log(evals);
                 // ctrlEvaluations.evaluationsLastDate(user_data, function(last_date) {
 
                 //     var date = new Date(user[0].birthdate);
@@ -119,9 +114,71 @@ module.exports = function(app) {
                     res
                         .status(200)
                         .render('events', {
+                            events:evals,
                             device: 'testing',
-                            // first_name: user[0].first_name,
-                            // last_name: user[0].last_name,
+                             first_name: 'Rana',
+                             last_name: 'Arsal',
+                            // diagnosis: user[0].disability,
+                            // interest: user[0].interests,
+                            // userId: user[0].id,
+                            // today: today,
+                            // birthday: date,
+                            // last_eval: last_date[0].date,
+                            // evaluations: evaluations
+                        });
+                        
+
+
+                    
+                // })
+
+            // })
+        })
+
+    })
+    //app.get('/events/eventid=87746:eventId', function(req, res) {
+    app.get('/events/:eventId/:eventName', function(req, res) {
+        console.log('events/:EventId/:eventName has been called')
+
+
+        var eventId = req.params.eventId;
+        console.log(eventId);
+        // var last_date = req.query.last_eval
+  
+
+        return models.Events.findAll({
+            where: {
+                id: eventId
+            }//,
+            // include: [{
+            //     model: models.Tickets
+            //     // include: [models.Tickets]
+            // }]
+        // }).then(function(event) {
+        //     console.log(event)
+        //     console.log('event information')
+ 
+        //     ctrlEvaluations.evaluationsGetAll(user_data, function(evals) {
+        //         console.log('get all evals has been called')
+
+                // evaluations = evals
+
+            }).then(function(evals) {
+                console.log('----Got this event-------');
+                console.log(evals[0]['dataValues']);
+                // ctrlEvaluations.evaluationsLastDate(user_data, function(last_date) {
+
+                //     var date = new Date(user[0].birthdate);
+                //     date = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+                        
+
+                    res
+                        .status(200)
+                        .render('events', {
+                            event:evals[0]['dataValues'],
+                            device: 'testing',
+                             first_name: 'Rana',
+                             last_name: 'Arsal',
                             // diagnosis: user[0].disability,
                             // interest: user[0].interests,
                             // userId: user[0].id,

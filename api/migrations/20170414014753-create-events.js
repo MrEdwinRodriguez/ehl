@@ -44,8 +44,8 @@ module.exports = {
       event_website: {
         type: Sequelize.STRING
       },
-      flyer: {
-        type: Sequelize.BLOB
+      event_flyer: {
+        type: Sequelize.STRING
       },
       online_price: {
         type: Sequelize.INTEGER

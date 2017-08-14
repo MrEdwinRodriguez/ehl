@@ -51,7 +51,6 @@ module.exports = function(sequelize, DataTypes) {
             type: Sequelize.CHAR(255),
             allowNull: false
         },
-    flyer: DataTypes.BLOB,
     online_price: {
             type: Sequelize.FLOAT,
             allowNull: false
@@ -82,6 +81,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     gender: {
             type: Sequelize.CHAR(10),
+            allowNull: true
+    },
+        /**Event flyer path */
+    event_flyer: {
+            type: Sequelize.STRING,
             allowNull: true
     },
     dob: {

@@ -270,12 +270,12 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="panel panel-default
+                        <div class="panel panel-default">
     
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     
-                             <form method='post' action="/api/events/create">
+                             <form method='post' action="/api/events/create" enctype="multipart/form-data" >
                                 <div class="login-form">
                                     <div class="control-group">
                                         <input type="text" class="login-field" placeholder="Event Name" id="event_name" name='event_name' required> </div>
@@ -330,7 +330,9 @@
                                     <div class="control-group">
                                         <input type="number" class="login-field" placeholder="Allotment" id="allotment" name='allotment' required>
                                     </div>
-    
+                                    <!-- Uploading flyer with events  -->
+                                    <label for="Flyer for event" >Upload Flyer: </label></br>
+                                        <input type='file' name='eventFlyer' id='flyerUpLoad' required>
             
                                     <div>Optional Info to Collect</div>
                                      <div class="control-group">
