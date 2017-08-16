@@ -43,14 +43,15 @@ module.exports = function(app) {
 
         ctrlEvents.eventsClientGetAll(req.session.client_id, function(data) {
 
-            function Event(id, name, date, location, sold, allotment, revenue) {
+            function Event(id, name, date, location, sold, allotment, revenue, event_flyer) {
                 this.id = id;
                 this.eventName = name;
                 this.date = date;
                 this.location = location;
                 this.sold = sold;
                 this.allotment = allotment;
-                this.revenue = revenue
+                this.revenue = revenue;
+                this.flyer = event_flyer;
             }
 
             for (i = 0; i < data.length; i++) {
@@ -58,7 +59,7 @@ module.exports = function(app) {
                 var date = new Date(data[i].event_date);
                 var convertedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
 
-                var myEvent = new Event(data[i].id, data[i].event_name, convertedDate, data[i].event_venue, data[i].sold, data[i].ticket_allotment, data[i].revenue)
+                var myEvent = new Event(data[i].id, data[i].event_name, convertedDate, data[i].event_venue, data[i].sold, data[i].ticket_allotment, data[i].revenue, data[i].event_flyer)
                 client_data.push(myEvent);
             }
 
@@ -116,8 +117,8 @@ module.exports = function(app) {
                         .render('events', {
                             events:evals,
                             device: 'testing',
-                             first_name: 'Rana',
-                             last_name: 'Arsal',
+                             first_name: 'Edwin',
+                             last_name: 'Rodriguez',
                             // diagnosis: user[0].disability,
                             // interest: user[0].interests,
                             // userId: user[0].id,
@@ -177,8 +178,8 @@ module.exports = function(app) {
                         .render('events', {
                             event:evals[0]['dataValues'],
                             device: 'testing',
-                             first_name: 'Rana',
-                             last_name: 'Arsal',
+                             first_name: 'Edwin',
+                             last_name: 'Rodriguez',
                             // diagnosis: user[0].disability,
                             // interest: user[0].interests,
                             // userId: user[0].id,

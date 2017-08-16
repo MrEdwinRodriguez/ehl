@@ -283,7 +283,8 @@
                                                 <th>Event Location</th>
                                                 <th>Allotment</th>
                                                 <th>Sold</th>
-                                                <th>Revenue</th>                                                
+                                                <th>Revenue</th>
+                                                <th>Flyer</th>                                                
                                             </tr>
                                         </thead>
                                        <tbody>
@@ -296,7 +297,8 @@
                                                 <td> {{this.allotment}}</td>
                                                 <td> {{this.sold}}</td>
                                                 <td> ${{this.revenue}}</td>                        
-                                                {{/each}}
+                                                <td> <img src="../uploads/{{this.flyer}}" height="100" width="100"/></td>
+                                               {{/each}} 
                                             </tr>
                                         </tbody>
                                     </table>

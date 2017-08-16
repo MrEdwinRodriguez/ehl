@@ -55,8 +55,8 @@ module.exports.createEvent = function(req, res){
             .render('events', {
                             event:status['dataValues'],
                             device: 'testing',
-                             first_name: 'Rana',
-                             last_name: 'Arsal',
+                             first_name: 'Edwin',
+                             last_name: 'Rodriguez',
             });    
         })   
 
