@@ -64,25 +64,25 @@ module.exports.createEvent = function(req, res){
 
 
 //uploads flyer for event
-module.exports.createEventFlyer = function(req, res, next){
-    console.log('uploading flyer')
-    console.log(req.file)
-    //     res.send(res.file)
-  //     var file = __dirname + '/' + req.file.filename;
-  // fs.rename(req.file.path, file, function(err) {
-  //   if (err) {
-  //     console.log(err);
-  //     res.send(500);
-  //   } else {
-  //     res.json({
-  //       message: 'File uploaded successfully',
-  //       filename: req.file.filename
-  //     });
-  //   }
-  // });
-}
+// module.exports.createEventFlyer = function(req, res, next){
+//     console.log('uploading flyer')
+//     console.log(req.file)
+//     //     res.send(res.file)
+//   //     var file = __dirname + '/' + req.file.filename;
+//   // fs.rename(req.file.path, file, function(err) {
+//   //   if (err) {
+//   //     console.log(err);
+//   //     res.send(500);
+//   //   } else {
+//   //     res.json({
+//   //       message: 'File uploaded successfully',
+//   //       filename: req.file.filename
+//   //     });
+//   //   }
+//   // });
+// }
 
-//all evetents associated with client
+//all events associated with client
 module.exports.eventsClientGetAll = function(req, cb){
 	console.log('view all client events')
     console.log(req)
@@ -117,9 +117,25 @@ module.exports.eventsClientGetAll = function(req, cb){
 }
 
 //specific event associated with client
-module.exports.eventsClientGetOne = function(req, res){
-	console.log('view one client event')
-	console.log(req.body)
+module.exports.eventsClientGetOne = function(id, cb){
+  console.log(id)
+
+      return models.Events.findAll({
+        where: {
+            id: id
+        }
+        // include: [{
+        //     // model: models.Livox_evaluation,
+        //     model: models.Livox_holder,
+        //     include: [models.Auth_user]
+        // }],
+    }).then(function(data) {
+     
+      console.log('sending over')
+      return data
+        // cb(data)
+    })
+
 
 }
 

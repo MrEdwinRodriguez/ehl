@@ -81,6 +81,7 @@ module.exports = function(app) {
         })
 
     });
+
     app.get('/events/list', function(req, res) {
         console.log('events/list has been called');
         // var last_date = req.query.last_eval
@@ -180,13 +181,6 @@ module.exports = function(app) {
                             device: 'testing',
                              first_name: 'Edwin',
                              last_name: 'Rodriguez',
-                            // diagnosis: user[0].disability,
-                            // interest: user[0].interests,
-                            // userId: user[0].id,
-                            // today: today,
-                            // birthday: date,
-                            // last_eval: last_date[0].date,
-                            // evaluations: evaluations
                         });
                         
 
@@ -212,6 +206,51 @@ module.exports = function(app) {
                 })
 
         });
+
+// route that allows client to see specific event
+    app
+        .get('/client/events/:eventId', function(req, res) {
+            var eventID = req.params.eventId
+       ctrlEvents.eventsClientGetOne(eventID, function(data) {
+        
+            return data
+        }).then(function(event) {
+            console.log('here already!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11')
+            console.log(event[0])
+
+            res
+                .status(200)
+                // .render('myEvent', {
+                //     email: req.session.client_email,
+                //     id: req.session.client_id,
+                //     first_name: req.session.first_name,
+                //     last_name: req.session.last_name
+                // })
+                .render('myEvent', {
+                            event:event[0],
+                            device: 'testing',
+                            id: req.session.client_id,
+                             first_name: req.session.first_name,
+                             last_name: req.session.last_name,
+            }); 
+            })
+        });
+
+
+// creates new link for every event for patrons to purchase
+    // app
+    //     .get('/events/:eventName', function(req, res) {
+    //         console.log(req.session.client_id)
+    //         res
+    //             .status(200)
+    //             .render('createEvent', {
+    //                 email: req.session.client_email,
+    //                 id: req.session.client_id,
+    //                 first_name: req.session.first_name,
+    //                 last_name: req.session.last_name
+    //             })
+
+    //     });        
 
     app
         .get('/events/createevent/flyer', function(req, res) {

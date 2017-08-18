@@ -56,22 +56,21 @@ router
 
 router
     .route('/events/create')
-    .post(uploadImages.single("eventFlyer"),eventsCtrl.createEvent);
+    .post(uploadImages.single("eventFlyer"),eventsCtrl.createEvent); 
+
+
+
 
 // router
-//     .route('/events/flyer')
-//     .post(uploadImages.single("eventFlyer"), eventsCtrl.createEventFlyer);   
-
- 
-// router
-//     .route('/events/:eventsId')
+//     .route('/:clientId/events/:eventsId')
 //     .get(eventsCtrl.eventsGetOne); 
 
+//gets all events for specefic client
 router
     .route('/clients/:clientId/events')
     .get(eventsCtrl.eventsClientGetAll); 
 
-
+// client views a specific event
 // router
 //     .route('/clients/:clientID/events/:eventId')
 //     .get(eventsCtrl.eventsClientGetOne);    
