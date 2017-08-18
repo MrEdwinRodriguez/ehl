@@ -211,46 +211,48 @@ module.exports = function(app) {
     app
         .get('/client/events/:eventId', function(req, res) {
             var eventID = req.params.eventId
-       ctrlEvents.eventsClientGetOne(eventID, function(data) {
-        
-            return data
-        }).then(function(event) {
-            console.log('here already!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11')
-            console.log(event[0])
+            ctrlEvents.eventsClientGetOne(eventID, function(data) {
 
-            res
-                .status(200)
-                // .render('myEvent', {
-                //     email: req.session.client_email,
-                //     id: req.session.client_id,
-                //     first_name: req.session.first_name,
-                //     last_name: req.session.last_name
-                // })
-                .render('myEvent', {
-                            event:event[0],
-                            device: 'testing',
-                            id: req.session.client_id,
-                             first_name: req.session.first_name,
-                             last_name: req.session.last_name,
-            }); 
+                return data
+            }).then(function(event) {
+                console.log(event[0])
+                res
+                    .status(200)
+                    .render('myEvent', {
+                        event: event[0],
+                        device: 'testing',
+                        id: req.session.client_id,
+                        first_name: req.session.first_name,
+                        last_name: req.session.last_name,
+                    });
             })
         });
 
 
 // creates new link for every event for patrons to purchase
-    // app
-    //     .get('/events/:eventName', function(req, res) {
-    //         console.log(req.session.client_id)
-    //         res
-    //             .status(200)
-    //             .render('createEvent', {
-    //                 email: req.session.client_email,
-    //                 id: req.session.client_id,
-    //                 first_name: req.session.first_name,
-    //                 last_name: req.session.last_name
-    //             })
+    app
+        .get('/events/:eventId', function(req, res) {
 
-    //     });        
+            var eventID = req.params.eventId
+            ctrlEvents.patronEventView(eventID, function(data) {
+
+                return data
+            }).then(function(event) {
+                console.log(event[0])
+                res
+                    .status(200)
+                    .render('patronEvent', {
+                        event: event[0],
+                        device: 'testing',
+                        id: req.session.client_id,
+                        first_name: req.session.first_name,
+                        last_name: req.session.last_name,
+                    });
+            })
+
+
+
+        });        
 
     app
         .get('/events/createevent/flyer', function(req, res) {

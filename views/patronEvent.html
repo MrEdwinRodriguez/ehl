@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Events, Tickets, concerts, shows, live">
+    <meta name="author" content="Edwin Rodriguez">
+
+    <title>Event Horizon</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+        
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+    
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    =
+                                    <!-- For one event only  -->
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th>Event Name</th>
+                                                <th>Event Time</th>
+                                                <th>Event Venue</th>
+                                                 <th>Event Address</th>           
+                                                <th>Event City</th>
+                                                <th>Event Date</th>
+                                                <th>Event Zip</th>
+                                                <th>Event Phone Number</th>
+                                                <th>Event Email</th>
+                                                <th>Flyer</th>                                                 
+                                            </tr>
+                                        </thead>
+                                       <tbody>
+                                           
+                                            <tr>
+                                                
+                                                <td>{{event.event_name}}</td>
+                                                <td> {{event.event_time}}</td>
+                                                <td> {{event.event_venue}}</td>
+                                                <td> {{event.event_address}}</td>
+                                                <td> {{event.event_city}}</td>
+                                                <td> ${{event.event_date}}</td>
+                                                <td> ${{event.event_zip}}</td>
+                                                <td> ${{event.event_contact_phone}}</td>
+                                                <td> ${{event.event_contact_email}}</td>
+                                                <td> <img src="../uploads/{{event.event_flyer}}" height="100" width="100"/></td>                  
+                                            </tr>
+                                            <tr>
+                                                <a href="/events/list" > < back</a>
+                                            </tr>
+                                              
+                                            <!-- For all events  -->
+             
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/script.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="/js/plugins/morris/raphael.min.js"></script>
+    <script src="/js/plugins/morris/morris.min.js"></script>
+    <script src="/js/plugins/morris/morris-data.js"></script>
+
+</body>
+
+</html>

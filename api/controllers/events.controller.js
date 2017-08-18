@@ -118,25 +118,29 @@ module.exports.eventsClientGetAll = function(req, cb){
 
 //specific event associated with client
 module.exports.eventsClientGetOne = function(id, cb){
-  console.log(id)
-
       return models.Events.findAll({
         where: {
             id: id
         }
-        // include: [{
-        //     // model: models.Livox_evaluation,
-        //     model: models.Livox_holder,
-        //     include: [models.Auth_user]
-        // }],
     }).then(function(data) {
-     
-      console.log('sending over')
-      return data
-        // cb(data)
+      return data  
     })
+}
 
+//specific event for patron 
+module.exports.patronEventView = function(id, cb){
+      return models.Events.findAll({
+        where: {
+            id: id
+        }
+    }).then(function(data) {
+      console.log(data)
+      var eventArr = [];
 
+      
+
+      return data  
+    })
 }
 
 //view all events in DB
