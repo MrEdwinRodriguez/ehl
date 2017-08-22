@@ -246,24 +246,90 @@
 
                                             {{/if}} 
                                             <!-- For all events  -->
-                                    {{#if events}}
-                                   
-                                           {{#each events}}
-                                            <tr>
-                                                <td> {{this.id}}</td>
-                                                <td><a href="/events/{{this.id}}/{{this.event_name}}" id={{this.id}}>{{this.event_name}}</a></td>
-                                                <td> {{this.event_date}}</td>
-                                                <td> {{this.event_venue}}</td>
-                                                <td> {{this.ticket_allotment}}</td>
-                                                <td> {{this.sold}}</td>
-                                                <td> ${{this.revenue}}</td>
-                                                <td> <img src="/uploads/{{this.flyer}}" id='{{this.flyer}}' height="100" width="100"/></td>                     
-                                                
-                                            </tr>
-                                                {{/each}}
-                                        </tbody>
-                                    </table>
-                                    {{/if}}   
+                             <form method='put' action="/api/events/create" enctype="multipart/form-data" >
+                             <div>
+                                 <h5>Event ID: {{event.id}}</h5>
+                             </div>
+                                <div class="login-form">
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" value="{{event.event_name}}" id="event_name" name='event_name' required> </div>
+                                    <div class="control-group">
+                                        <input type="date" class='login-field' name="event_date" id='event_date' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="time" class='login-field' name="event_time" id='event_time' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" value="{{event.event_venue}}" id="venue" name='venue' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" value="{{event.event_address}}" id="address" name='address' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" value="{{event.event_city}}" id="city" name='city' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" value="{{event.event_state}}" id="state" name='state' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" value="{{event.event_zip}}" id="zipcode" name='zipcode' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="login-field" value="{{event.event_contact}}" id="event_contact" name='event_contact' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="email" class="login-field" value="{{event.event_contact_email}}" id="event_contact_email" name='event_contact_email' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="tel" class="login-field" value="{{event.event_contact_phone}}" id="event_contact_phone_number" name='event_contact_phone_number' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="tel" class="login-field" value="{{event.event_description}}" id="description" name='description' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="tel" class="login-field" value="{{event.event_website}}" id="website" name='website'>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="number" class="login-field" value="{{event.online_price}}" id="online_price" name='online_price' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="number" class="login-field" value="{{event.door_price}}" id="door_price" name='door_price' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="date" class="login-field" value="{{event.ticket_sales_start}}" id="tickets_start" name='tickets_start' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="date" class="login-field" placeholder="Tickets End" id="tickets_end" name='tickets_end' required>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="number" class="login-field" value="{{event.ticket_allotment}}" id="allotment" name='allotment' required>
+                                    </div>
+                                    <!-- Uploading flyer with events  -->
+                                    <label for="Flyer for event" >Upload Flyer: </label></br>
+                                        <input type='file' name='eventFlyer' id='flyerUpLoad' required>
+            
+                                    <div>Optional Info to Collect</div>
+                                     <div class="control-group">
+                                        <input type="checkbox" name="gender" id='checked'>Gender<br>
+                                    </div>
+                                     <div class="control-group">
+                                        <input type="checkbox" name="dob" id='checked'>Date of Birth<br>
+                                    </div>
+                                     <div class="control-group">
+                                        <input type="checkbox" name="income_bracket" id='checked'>Income Bracket<br>
+                                    </div>
+                                     <div class="control-group">
+                                        <input type="checkbox" name="education" id='checked'>Education Level<br>
+                                    </div> 
+                                     <div class="control-group">
+                                        <input type="checkbox" name="ethnicity" id='checked'>Ethnicity<br>
+                                    </div>  
+                                     <div class="control-group">
+                                        <input type="checkbox" name="religion" id='checked'>Religion<br>
+                                    </div>                                                                                                                                                 
+                                    <button class="btn btn-primary btn-large btn-block" href="client.html" type='submit'>Edit Event</button>
+                                </div>
+                            </form>
                                         </tbody>
                                     </table>
                                 </div>

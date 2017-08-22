@@ -228,6 +228,28 @@ module.exports = function(app) {
             })
         });
 
+// allows client to edit event
+   app
+        .get('/client/events/edit/:eventId', function(req, res) {
+            var eventID = req.params.eventId
+            console.log(eventID)
+            ctrlEvents.eventsClientGetOne(eventID, function(data) {
+
+                return data
+            }).then(function(event) {
+                console.log(event[0])
+                res
+                    .status(200)
+                    .render('myEventEdit', {
+                        event: event[0],
+                        device: 'testing',
+                        id: req.session.client_id,
+                        first_name: req.session.first_name,
+                        last_name: req.session.last_name,
+                    });
+            })
+        });
+
 
 // creates new link for every event for patrons to purchase
     app
