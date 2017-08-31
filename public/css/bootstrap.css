@@ -187,6 +187,22 @@ td,
 th {
   padding: 0;
 }
+
+.ticketAmount{
+    width: 20% !important;
+}
+
+.testing{
+    text-align: center !important; 
+}
+
+#selectbasic{
+  margin: auto;
+}
+
+body #buyer{
+  background-color: white;
+}
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,

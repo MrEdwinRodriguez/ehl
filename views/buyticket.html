@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -12,44 +11,43 @@
     <title>Event Horizon</title>
 
     <!-- Bootstrap Core CSS -->
-    <!-- <link href="/css/bootstrap.min.css" rel="stylesheet"> -->
-     <link href="/css/bootstrap.css" rel="stylesheet">
-
+    <link href="./css/bootstrap.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="/css/sb-admin.css" rel="stylesheet">
 
-  
+    <!-- Custom Fonts -->
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 </head>
+
 <body>
 
-    <div id="wrapper" id='buyer'>
-        
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Event Horizon</a>
-                </div>
-            </div>
-        </nav>
+    <div id="wrapper">
+		
+		<nav class="navbar navbar-default navbar-static-top">
+		    <div class="container-fluid">
+		        <div class="navbar-header">
+		            <a class="navbar-brand" href="#">Event Horizon</a>
+		        </div>
+		    </div>
+		</nav>
 
-    <div class="container">
-      <div class="jumbotron">
-        <h2>{{event.event_name}}</h2>      
-        <div class="row">
-          <div class="col-md-4"><img src="../uploads/{{event.event_flyer}}" style="width:275px;height:175px;"></div>
-            <div class="col-md-4">      
-                <h4>Date: {{event.event_date}}</h4>
-                <h4>Venue: {{event.event_venue}}</h4>
-                <h4>Time: {{event.event_time}}</h4> 
-                <h4>Address: {{event.event_address}} {{event.event_city}}, {{event.event_state}} {{event.event_zip}}</h4><h4>Price Online: {{event.online_price}}</h4>
-                <h4>Price at Door: {{event.door_price}}/h4> 
-            </div>
-          <div class="col-md-4">{{event.event_description}}</div>
-        </div>             
-        
-      </div>
-      <form class="form-horizontal testing">
+	<div class="container">
+	  <div class="jumbotron">
+	    <h2>{{event.event_name}}</h2>      
+		<div class="row">
+		  <div class="col-md-4"><img src="../uploads/{{event.event_flyer}}" style="width:275px;height:175px;"></div>
+		  	<div class="col-md-4">	    
+				<h4>Date: {{event.event_date}}</h4>
+				<h4>Venue: {{event.event_venue}}</h4>
+			    <h4>Time: {{event.event_time}}</h4>	
+			    <h4>Address: {{event.event_address}} {{event.event_city}}, {{event.event_state}} {{event.event_zip}}</h4><h4>Price Online: {{event.online_price}}</h4>
+			    <h4>Price at Door: {{event.door_price}}/h4>	
+	    	</div>
+		  <div class="col-md-4">{{event.description}}</div>
+		</div>             
+	    
+	  </div>
+	  <form class="form-horizontal testing">
 <fieldset>
 
 <!-- Form Name -->
@@ -80,7 +78,7 @@
 
 </fieldset>
 </form>     
-    </div>
+	</div>
 
 
 
@@ -96,5 +94,4 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
-
 </html>
