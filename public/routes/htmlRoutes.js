@@ -112,10 +112,7 @@ module.exports = function(app) {
                 //     var date = new Date(user[0].birthdate);
                 //     date = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
                         
-
-                    res
-                        .status(200)
-                        .render('events', {
+                    var data = {
                             events:evals,
                             device: 'testing',
                              first_name: 'Edwin',
@@ -126,8 +123,12 @@ module.exports = function(app) {
                             // today: today,
                             // birthday: date,
                             // last_eval: last_date[0].date,
-                            // evaluations: evaluations
-                        });
+                            // evaluations: evaluations,
+                            /* layout: false  */ //uncomment this line if you want to render without layout 
+                        };
+                    res
+                        .status(200)
+                        .render('events', data);
                         
 
 
@@ -253,7 +254,7 @@ module.exports = function(app) {
 
 // creates new link for every event for patrons to purchase
     app
-        .get('/events/:eventId', function(req, res) {
+        .get('/events/details/:eventId/:eventName', function(req, res) {
 
             var eventID = req.params.eventId
             ctrlEvents.patronEventView(eventID, function(data) {
@@ -264,6 +265,7 @@ module.exports = function(app) {
                 res
                     .status(200)
                     .render('patronEvent', {
+                        layout: false, /**This line is important it will not render default layout with template */
                         event: event[0],
                         device: 'testing',
                         id: req.session.client_id,

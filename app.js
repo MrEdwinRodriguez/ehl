@@ -30,10 +30,23 @@ app.use(function(req, res, next) {
     next();
 });
 
-// established views engine and allows to use .html instead of .handlebars
 app.engine('html', exphbs({
+    extname: '.html',
     defaultLayout: 'main',
-    extname: '.html'
+    layoutsDir: __dirname + '/views/layouts/',
+    partialsDir: __dirname + '/views/partials/',
+    helpers: {
+        include: function (name) {
+            var hbs = require('express-handlebars').create();
+
+            hbs.getPartials(name).then(function (partials) {
+                console.log(partials);
+                // => { 'foo/bar': [Function],
+                // =>    title: [Function] }
+                return partials;
+            });
+        }
+    }
 }));
 app.set('view engine', 'html');
 
