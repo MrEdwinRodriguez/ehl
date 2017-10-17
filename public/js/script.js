@@ -17,10 +17,11 @@
 
 $(document).ready(function() {
 
-    $("#createEvent").click(function() {
-
-        console.log('hello')
-    })
+    $('#dashboardTable').DataTable( {
+        responsive: true,
+        "pageLength": 10,
+        "lengthMenu": [ 10, 20, 50 ]
+    } );
 
    
 })     
