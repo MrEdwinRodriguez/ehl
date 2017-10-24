@@ -3,9 +3,20 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
+                        <div><img src="/uploads/{{event.event_flyer}}" height="100" width="100"/></div>
                         <h1 class="page-header">
-                            Welcome <small>{{first_name}} {{last_name}}</small>
+                            Event: <small>{{event.event_name}}</small>
                         </h1>
+                        <h1 class="page-header">
+                            Date: <small>{{event.event_date}}</small>
+                        </h1>
+                        <h1 class="page-header">
+                            Location: <small>{{event.event_venue}}</small>
+                        </h1>
+                        <h4>{{event.event_address}}<br> {{event.event_city}}, {{event.event_state}} {{event.event_zip}}</h4>
+                        <h1 class="page-header">
+                            Time: <small>{{event.event_time}}</small>
+                        </h1>                        
                         <ol class="breadcrumb">
                             <li class="active">
                                 <i class="fa fa-dashboard"></i> Dashboard
@@ -21,8 +32,7 @@
     
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    <a href="/events/createevents" ><input type="button" value="Create Event" /></a>
-                                    <br></br>
+                                 
                                     <!-- For one event only  -->
                                     <table class="table table-bordered table-hover table-striped">
                                         <thead>
@@ -38,7 +48,7 @@
                                             </tr>
                                         </thead>
                                        <tbody>
-                                           <!-- {{#if event}} 
+                                           {{#if event}} 
                                             <tr>
                                                 
                                                 <td> {{event.id}}</td>
@@ -50,26 +60,12 @@
                                                 <td> ${{event.revenue}}</td>
                                                 <td> <img src="/uploads/{{event.event_flyer}}" height="100" width="100"/></td>                    
                                             </tr>
-                                            <tr>
-                                                <a href="/events/list" > < back</a>
-                                            </tr>
+                                          
                                             {{/if}}   
-                                            <!-- For all events  -->
+                                            <!-- For all events 
                                     {{#if events}} -->
                                    
-                                           {{#each events}}
-                                            <tr>
-                                                <td> {{this.id}}</td>
-                                                <td><a href="/events/details/{{this.id}}/{{this.event_name}}" id={{this.id}}>{{this.event_name}}</a></td>
-                                                <td> {{this.event_date}}</td>
-                                                <td> {{this.event_venue}}</td>
-                                                <td> {{this.ticket_allotment}}</td>
-                                                <td> {{this.sold}}</td>
-                                                <td> ${{this.revenue}}</td>
-                                                <td> <img src="/uploads/{{this.flyer}}" id='{{this.flyer}}' height="100" width="100"/></td>                     
-                                                
-                                            </tr>
-                                                {{/each}}
+                                  
                                         </tbody>
                                     </table>
                                     {{/if}}   

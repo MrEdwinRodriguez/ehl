@@ -152,35 +152,20 @@ module.exports = function(app) {
         return models.Events.findAll({
             where: {
                 id: eventId
-            }//,
-            // include: [{
-            //     model: models.Tickets
-            //     // include: [models.Tickets]
-            // }]
-        // }).then(function(event) {
-        //     console.log(event)
-        //     console.log('event information')
- 
-        //     ctrlEvaluations.evaluationsGetAll(user_data, function(evals) {
-        //         console.log('get all evals has been called')
+            }
 
-                // evaluations = evals
-
-            }).then(function(evals) {
+            }).then(function(event) {
                 console.log('----Got this event-------');
-                console.log(evals[0]['dataValues']);
-                // ctrlEvaluations.evaluationsLastDate(user_data, function(last_date) {
-
-                //     var date = new Date(user[0].birthdate);
-                //     date = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+                console.log(event[0]['dataValues']);
+                    
                         
 
                     res
                         .status(200)
                         .render('events', {
-                            event:evals[0]['dataValues'],
+                            event:event[0]['dataValues'],
                             device: 'testing',
-                             first_name: 'Edwin',
+                             first_name: 'dwin',
                              last_name: 'Rodriguez',
                         });
                         
