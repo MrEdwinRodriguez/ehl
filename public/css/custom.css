@@ -46,11 +46,11 @@ _______________________________________________________*/
  /* - General Style //---------------- */ 
 
  ::-moz-selection {
- background-color: #0fb7a4;
+ background-color: #0b2320;
  color: #FFF;
 }
 ::selection {
-	background-color: #0fb7a4;
+	background-color: #0b2320;
 	color: #FFF;
 }
 body, html {
@@ -553,7 +553,7 @@ header#header {
 }*/
 
 .header-middle {
-	background: #0fb7a4;
+	background: #0b2320;
 	position: relative;
 }
 
