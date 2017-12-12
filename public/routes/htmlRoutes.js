@@ -250,6 +250,8 @@ module.exports = function(app) {
 
                 return data
             }).then(function(event) {
+                console.log('hi')
+                // xonaolw.lof(event)
                 console.log(event[0])
                 res
                     .status(200)

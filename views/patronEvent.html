@@ -1,100 +1,703 @@
 <!DOCTYPE html>
+<!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
-
+<!--<![endif]--> 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Events, Tickets, concerts, shows, live">
-    <meta name="author" content="Edwin Rodriguez">
-
-    <title>Event Horizon</title>
-
-    <!-- Bootstrap Core CSS -->
-    <!-- <link href="/css/bootstrap.min.css" rel="stylesheet"> -->
-     <link href="/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="/css/sb-admin.css" rel="stylesheet">
-
-  
-
+<!-- Basic Page Needs
+  ================================================== -->
+<meta charset="utf-8">
+<title>Eshoper</title>
+<!-- SEO Meta
+  ================================================== -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="distribution" content="global">
+<meta name="revisit-after" content="2 Days">
+<meta name="robots" content="ALL">
+<meta name="rating" content="8 YEARS">
+<meta name="Language" content="en-us">
+<meta name="GOOGLEBOT" content="NOARCHIVE">
+<!-- Mobile Specific Metas
+  ================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- CSS
+  ================================================== -->
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/css/owl.carousel.css">
+<!-- <link rel="stylesheet" type="text/css" href="/css/fotorama.css"> -->
+<link rel="stylesheet" type="text/css" href="/css/custom.css">
+<link rel="stylesheet" type="text/css" href="/css/responsive.css">
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 </head>
-<body>
+<body  class="product-page">
+<div class="se-pre-con"></div>
+<div class="main"> 
 
-    <div id="wrapper" id='buyer'>
-        
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Event Horizon Separate page no main layout (just for reminder)</a>
-                </div>
+  <!-- HEADER START -->
+  <header class="navbar navbar-custom " id="header">
+    <div class="header-top">
+      <div class="container">
+        <div class="header-top-inner">
+          <div class="row">
+            <div class="col-xs-12 align-center">
+              <div class="navbar-header align-center"> 
+                <a class="navbar-brand page-scroll" href="index.html"> 
+                  <img alt="Eshoper" src="images/logo.png"> 
+                </a>  
+              </div>            
             </div>
-        </nav>
-
-    <div class="container">
-      <div class="jumbotron">
-        <h2>{{event.event_name}}</h2>      
-        <div class="row">
-          <div class="col-md-4"><img src="../uploads/{{event.event_flyer}}" style="width:275px;height:175px;"></div>
-            <div class="col-md-4">      
-                <h4>Date: {{event.event_date}}</h4>
-                <h4>Venue: {{event.event_venue}}</h4>
-                <h4>Time: {{event.event_time}}</h4> 
-                <h4>Address: {{event.event_address}} {{event.event_city}}, {{event.event_state}} {{event.event_zip}}</h4><h4>Price Online: {{event.online_price}}</h4>
-                <h4>Price at Door: {{event.door_price}}/h4> 
-            </div>
-          <div class="col-md-4">{{event.event_description}}</div>
-        </div>             
-        
+          </div>
+        </div>
       </div>
-      <form class="form-horizontal testing">
-<fieldset>
-
-<!-- Form Name -->
-<legend>Form Name</legend>
-
-<!-- Select Basic -->
-<div class="form-group">
-  <div class="col-md-12">
-    <select id="selectbasic" name="selectbasic" class="form-control ticketAmount">
-      <option value="1">1 Ticket</option>
-      <option value="2">2 Tickets</option>
-      <option value="3">3 Ticket</option>
-      <option value="4">4 Tickets</option>
-      <option value="5">5 Ticket</option>
-      <option value="6">6 Tickets</option>
-      <option value="7">7 Ticket</option>
-      <option value="8">8 Tickets</option>                  
-    </select>
-  </div>
-</div>
-
-<!-- Button -->
-<div class="form-group">
-  <div class="col-md-12">
-    <button id="singlebutton" name="buyTicket" class="btn btn-primary">Buy Tickets</button>
-  </div>
-</div>
-
-</fieldset>
-</form>     
     </div>
+    <div class="header-middle">
+      <div class="container">
+        <div class="header-inner">
+          <div class="row header-position">
+            <div class="float-none-sm">
+              <div class="right-side float-left-xs header-right-link">
+                <ul>
+                  <li class="search-box">
+                    <a><span></span></a>
+                  </li>
+                  <li class="account-icon"> <a href="#"><span></span></a>
+                    <div class="header-link-dropdown account-link-dropdown">
+                      <ul class="link-dropdown-list">
+                        <li> <span class="dropdown-title">Default welcome msg!</span>
+                          <ul>
+                            <li><a href="login.html">Sign In</a></li>
+                            <li><a href="register.html">Create an Account</a></li>
+                          </ul>
+                        </li>
+                        <li> <span class="dropdown-title">Language :</span>
+                          <ul>
+                            <li><a class="active" href="#">English</a></li>
+                            <li><a href="#">French</a></li>
+                            <li><a href="#">German</a></li>
+                          </ul>
+                        </li>
+                        <li> <span class="dropdown-title">Currency :</span>
+                          <ul>
+                            <li><a class="active" href="#">USD</a></li>
+                            <li><a href="#">AUD</a></li>
+                            <li><a href="#">EUR</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="cart-icon"> <a href="#"> <span> <small class="cart-notification">2</small> </span> </a>
+                    <div class="cart-dropdown header-link-dropdown">
+                      <ul class="cart-list link-dropdown-list">
+                        <li> <a class="close-cart"><i class="fa fa-times-circle"></i></a>
+                          <div class="media"> <a class="pull-left"> <img alt="Ambar" src="images/1.jpg"></a>
+                            <div class="media-body"> <span><a>Black African Print Skirt</a></span>
+                              <p class="cart-price">$14.99</p>
+                              <div class="product-qty">
+                                <label>Qty:</label>
+                                <div class="custom-qty">
+                                  <input type="text" name="qty" maxlength="8" value="1" title="Qty" class="input-text qty">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li> <a class="close-cart"><i class="fa fa-times-circle"></i></a>
+                          <div class="media"> <a class="pull-left"> <img alt="Ambar" src="images/2.jpg"></a>
+                            <div class="media-body"> <span><a>Black African Print Skirt</a></span>
+                              <p class="cart-price">$14.99</p>
+                              <div class="product-qty">
+                                <label>Qty:</label>
+                                <div class="custom-qty">
+                                  <input type="text" name="qty" maxlength="8" value="1" title="Qty" class="input-text qty">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <p class="cart-sub-totle"> 
+                        <span class="pull-left">Cart Subtotal</span> 
+                        <span class="pull-right">
+                          <strong class="price-box">$29.98</strong>
+                        </span> 
+                      </p>
+                      <div class="clearfix"></div>
+                      <div class="mt-20"> <a href="cart.html" class="btn-color btn">Cart</a> <a href="checkout.html" class="btn-color btn right-side">Checkout</a> </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                <i class="fa fa-bars"></i>
+              </button>
+              <div id="menu" class="navbar-collapse collapse left-side" >
+                   <ul class="nav navbar-nav">
+                  <li class="level"><a href="shop.html" class="page-scroll">Concerts</a></li>
+                  <li class="level dropdown"> <span class="opener plus"></span> <a href="shop.html" class="page-scroll">Sports</a>
+                    <div class="megamenu mobile-sub-menu">
+                      <div class="megamenu-inner-top">
+                        <ul class="sub-menu-level1">
+                          <li class="level2 "> <a href="shop.html"><span>Major Four</span></a>
+                            <ul class="sub-menu-level2">
+                              <li class="level3"><a href="shop.html"><span>■</span>Football</a></li>
+                              <li class="level3"><a href="shop.html"><span>■</span>Baseball</a></li>
+                              <li class="level3"><a href="shop.html"><span>■</span>Basketball</a></li>
+                              <li class="level3"><a href="shop.html"><span>■</span>Soccer</a></li>
+                            </ul>
+                          </li>
+                          <li class="level2"> <a href="shop.html"><span>Others</span></a>
+                            <ul class="sub-menu-level2 ">
+                              <li class="level3"><a href="shop.html"><span>■</span>Hockey</a></li>
+                              <li class="level3"><a href="shop.html"><span>■</span>Golf</a></li>
+                              <li class="level3"><a href="shop.html"><span>■</span>Boxing</a></li>
+                              <li class="level3"><a href="shop.html"><span>■</span>College Sports</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                        <div class="megamenu-inner-bottom mt-20 visible-lg visible-md">
+                          <a href="shop.html">
+                            <img src="images/drop_banner.jpg" alt="ambar">
+                          </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="level dropdown"> <span class="opener plus"></span> <a class="page-scroll">Plays</a>
+                    <div class="megamenu mobile-sub-menu">
+                      <div class="megamenu-inner-top">
+                        <ul class="sub-menu-level1">
+                          <li class="level2">
+                            <ul class="sub-menu-level2 ">
+                              <li class="level3"><a href="about.html"><span>■</span>Musicals</a></li>
+                              <li class="level3"><a href="account.html"><span>■</span>Plays</a></li>
+                              <li class="level3"><a href="contact.html"><span>■</span>Step Shows</a></li>
 
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="level dropdown"> <span class="opener plus"></span> <a class="page-scroll">Activities</a>
+                    <div class="megamenu mobile-sub-menu">
+                      <div class="megamenu-inner-top">
+                        <ul class="sub-menu-level1">
+                          <li class="level2">
+                            <ul class="sub-menu-level2 ">
+                              <li class="level3"><a href="about.html"><span>■</span>Classes</a></li>
+                              <li class="level3"><a href="account.html"><span>■</span>Wine Tasting</a></li>
+                              <li class="level3"><a href="contact.html"><span>■</span>Dancing</a></li>
 
-
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /#wrapper -->
+  </header>
+
+  <div class="sidebar-search-wrap">
+    <div class="sidebar-table-container">
+      <div class="sidebar-align-container">
+        <div class="search-closer right-side"></div>
+        <div class="search-container">
+          <form method="get" id="search-form">
+            <input type="text" id="s" class="search-input" name="s" placeholder="Start Searching">
+          </form>
+          <span>Search and Press Enter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- HEADER END --> 
+ 
+  
+  <!-- CONTAIN START -->
+  <section class="pt-95">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-5 col-sm-5 mb-xs-30">
+             
+               <img src="/../uploads/{{event.event_flyer}}" width='250' height='400' />
+              <!--  <img src='/../uploads/b0af5f475c3e80974430ab3e3efba463ee84fd92.PNG' /> -->
+         <!--      <div class="fotorama" data-nav="thumbs" data-allowfullscreen="native"> <a href="#"><img src="images/1.jpg" alt="Eshoper"></a> <a href="#"><img src="images/2.jpg" alt="Eshoper"></a> <a href="#"><img src="images/3.jpg" alt="Eshoper"></a> <a href="#"><img src="images/4.jpg" alt="Eshoper"></a> <a href="#"><img src="images/5.jpg" alt="Eshoper"></a> <a href="#"><img src="images/6.jpg" alt="Eshoper"></a> <a href="#"><img src="images/4.jpg" alt="Eshoper"></a> <a href="#"><img src="images/5.jpg" alt="Eshoper"></a> <a href="#"><img src="images/6.jpg" alt="Eshoper"></a> </div> -->
+            </div>
+            <div class="col-md-7 col-sm-7">
 
 
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="product-detail-main">
+                    <div class="product-item-details">
+                      <h1 class="product-item-name">{{event.event_name}}</h1>
+                      <div class="price-box"> <span class="price">Online Price: {{event.online_price}}</span> <br>
+                        <span class="price">Price at Door: {{event.door_price}}</span> </div>
+                      <div class="product-info-stock-sku">
+                        <div>
+                          <label>When: </label>
+                          <span class="info-deta">
+                            <h4>Date: {{event.event_date}}</h4>
+                            <h4>Time: {{event.event_time}}</h4> 
+                          </span> </div>
+                        <div>
+                          <label>Where: </label>
+                            <span class="info-deta">
+                              <h4>Venue: {{event.event_venue}}</h4>
+                              <h4>Address: {{event.event_address}} {{event.event_city}}, {{event.event_state}} {{event.event_zip}}</h4>
+                          </span> </div>
+                      </div>
+                      <p>{{event.event_description}} </p>
 
+                      <div class="mb-20">
+                        <div class="product-qty">
+                          <label for="qty">Qty:</label>
+                          <div class="custom-qty">
+                            <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) result.value--;return false;" class="reduced items" type="button"> <i class="fa fa-minus"></i> </button>
+                            <input type="text" class="input-text qty" title="Qty" value="1" maxlength="8" id="qty" name="qty">
+                            <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items" type="button"> <i class="fa fa-plus"></i> </button>
+                          </div>
+                        </div>
+                        <div class="bottom-detail cart-button">
+                          <ul>
+                            <li class="pro-cart-icon">
+                              <form>
+                                <button title="Add to Cart" class="btn btn-color"><span></span>Add to Cart</button>
+                              </form>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="bottom-detail">
+                        <ul>
+                          <li class="pro-email-icon"><a href="#"><span></span>Email to Friends</a></li>
+                        </ul>
+                      </div>
+                      <div class="share-link">
+                        <label>Share This : </label>
+                        <div class="social-link">
+                          <ul class="social-icon">
+                            <li><a class="facebook" title="Facebook" href="#"><i class="fa fa-facebook"> </i></a></li>
+                            <li><a class="twitter" title="Twitter" href="#"><i class="fa fa-twitter"> </i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          Contact:
+          {{event.event_contact_phone}}<br>
+          {{event.event_contact_email}}<br>
+          {{event.event_website}}
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ptb-95">
+    <div class="container">
+      <div class="product-detail-tab">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="tabs">
+              <ul class="nav nav-tabs">
+                <li><a class="tab-Description selected" title="Description">Description</a></li>
+              </ul>
+            </div>
+            <div id="items">
+              <div class="tab_content">
+                <ul>
+                  <li>
+                    <div class="items-Description selected ">
+                      <div class="Description"> <strong>{{event.event_name}}</strong><br />
+                        <p>{{event.event_description}}</p>
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-95">
+    <div class="container">
+      <div class="product-listing">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="heading-part align-center mb-40">
+              <h2 class="main_title"><span>Related Products</span></h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="pro_cat">
+            <div class="owl-carousel pro_cat_slider">
+              <div class="item">
+                <div class="product-item">
+                  <div class="new-label"><span>New</span></div>
+                  <div class="product-image"> <a href="product-page.html"> <img src="images/1.jpg" alt=""> </a>
+                    <div class="product-detail-inner">
+                      <div class="detail-inner-left left-side">
+                        <ul>
+                          <li class="pro-cart-icon">
+                            <form>
+                              <button title="Add to Cart"><span></span>Add to Cart</button>
+                            </form>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="detail-inner-left right-side">
+                        <ul>
+                          <li class="pro-wishlist-icon active"><a href="#" title="Wishlist"></a></li>
+                          <li class="pro-compare-icon"><a href="#" title="Compare"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-item-details">
+                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                    <div class="rating-summary-block right-side">
+                      <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="product-item">
+                  <div class="sale-label"><span>Sale</span></div>
+                  <div class="product-image"> <a href="product-page.html"> <img src="images/3.jpg" alt=""> </a>
+                    <div class="product-detail-inner">
+                      <div class="detail-inner-left left-side">
+                        <ul>
+                          <li class="pro-cart-icon">
+                            <form>
+                              <button title="Add to Cart"><span></span>Add to Cart</button>
+                            </form>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="detail-inner-left right-side">
+                        <ul>
+                          <li class="pro-wishlist-icon "><a href="#" title="Wishlist"></a></li>
+                          <li class="pro-compare-icon"><a href="#" title="Compare"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-item-details">
+                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                    <div class="rating-summary-block right-side">
+                      <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="product-item">
+                  <div class="new-label"><span>New</span></div>
+                  <div class="sale-label"><span>Sale</span></div>
+                  <div class="product-image"> <a href="product-page.html"> <img src="images/4.jpg" alt=""> </a>
+                    <div class="product-detail-inner">
+                      <div class="detail-inner-left left-side">
+                        <ul>
+                          <li class="pro-cart-icon">
+                            <form>
+                              <button title="Add to Cart"><span></span>Add to Cart</button>
+                            </form>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="detail-inner-left right-side">
+                        <ul>
+                          <li class="pro-wishlist-icon "><a href="#" title="Wishlist"></a></li>
+                          <li class="pro-compare-icon"><a href="#" title="Compare"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-item-details">
+                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                    <div class="rating-summary-block right-side">
+                      <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="product-item">
+                  <div class="product-image"> <a href="product-page.html"> <img src="images/5.jpg" alt=""> </a>
+                    <div class="product-detail-inner">
+                      <div class="detail-inner-left left-side">
+                        <ul>
+                          <li class="pro-cart-icon">
+                            <form>
+                              <button title="Add to Cart"><span></span>Add to Cart</button>
+                            </form>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="detail-inner-left right-side">
+                        <ul>
+                          <li class="pro-wishlist-icon "><a href="#" title="Wishlist"></a></li>
+                          <li class="pro-compare-icon"><a href="#" title="Compare"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-item-details">
+                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                    <div class="rating-summary-block right-side">
+                      <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="product-item">
+                  <div class="product-image"> <a href="product-page.html"> <img src="images/6.jpg" alt=""> </a>
+                    <div class="product-detail-inner">
+                      <div class="detail-inner-left left-side">
+                        <ul>
+                          <li class="pro-cart-icon">
+                            <form>
+                              <button title="Add to Cart"><span></span>Add to Cart</button>
+                            </form>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="detail-inner-left right-side">
+                        <ul>
+                          <li class="pro-wishlist-icon "><a href="#" title="Wishlist"></a></li>
+                          <li class="pro-compare-icon"><a href="#" title="Compare"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-item-details">
+                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                    <div class="rating-summary-block right-side">
+                      <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="product-item">
+                  <div class="sale-label"><span>Sale</span></div>
+                  <div class="product-image"> <a href="product-page.html"> <img src="images/7.jpg" alt=""> </a>
+                    <div class="product-detail-inner">
+                      <div class="detail-inner-left left-side">
+                        <ul>
+                          <li class="pro-cart-icon">
+                            <form>
+                              <button title="Add to Cart"><span></span>Add to Cart</button>
+                            </form>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="detail-inner-left right-side">
+                        <ul>
+                          <li class="pro-wishlist-icon "><a href="#" title="Wishlist"></a></li>
+                          <li class="pro-compare-icon"><a href="#" title="Compare"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-item-details">
+                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                    <div class="rating-summary-block right-side">
+                      <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CONTAINER END --> 
+
+  <!-- FOOTER START -->
+  <div class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="row">
+            <div class="col-md-4 f-col footer-middle-left">
+              <div class="f-logo"> <a href="index.html" class=""> <img src="images/footer-logo.png" alt="Eshoper"> </a> </div>
+              <div class="footer-static-block"> <span class="opener plus"></span>
+                <ul class="footer-block-contant address-footer">
+                  <li class="item"> <i class="fa fa-map-marker"> </i>
+                    <p>150-A Appolo aprtment, opp. Hopewell Junction, <br>Allen st Road, new york-405001.</p>
+                  </li>
+                  <li class="item"> <i class="fa fa-envelope"> </i>
+                    <p> <a>infoservices@eshoper.com </a> </p>
+                  </li>
+                  <li class="item"> <i class="fa fa-phone"> </i>
+                    <p>(+91) 9834567890</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-8 footer-middle-right">
+              <div class="row">
+                <div class="col-md-4 f-col">
+                  <div class="footer-static-block"> <span class="opener plus"></span>
+                    <h3 class="title">Help <span></span></h3>
+                    <ul class="footer-block-contant link">
+                      <li><a>Gift Cards</a></li>
+                      <li><a>Order Status</a></li>
+                      <li><a>Free Shipping</a></li>
+                      <li><a>Return & Exchange </a></li>
+                      <li><a>International</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4 f-col">
+                  <div class="footer-static-block"> <span class="opener plus"></span>
+                    <h3 class="title">Guidance <span></span></h3>
+                    <ul class="footer-block-contant link">
+                      <li><a> Delivery information</a></li>
+                      <li><a> Privacy Policy</a></li>
+                      <li><a> Terms & Conditions</a></li>
+                      <li><a> Contact</a></li>
+                      <li><a> Sitemap</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4 f-col">
+                  <div class="footer-static-block"> <span class="opener plus"></span>
+                    <h3 class="title">Information <span></span></h3>
+                    <ul class="footer-block-contant link">
+                      <li><a> Delivery information</a></li>
+                      <li><a> Privacy Policy</a></li>
+                      <li><a> Terms & Conditions</a></li>
+                      <li><a>Contact</a></li>
+                      <li><a> Sitemap</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="footer-middle">
+          <div class="row">
+            <div class="col-lg-5 col-md-12">
+              <div class="site-link">
+                <ul>
+                  <li><a>About Us</a></li>
+                  <li><a>Contact Us</a></li>
+                  <li><a>Customer </a></li>
+                  <li><a>Service</a></li>
+                  <li><a>Privacy</a></li>
+                  <li><a>Policy </a></li>
+                  <li><a>Accessibility</a></li>
+                  <li><a>Directory </a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+              <div class="newsletter">
+                <div class="newsletter-inner center-sm">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="newsletter-title">
+                        <h2 class="main_title">newsletter!</h2>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <form>
+                        <div class="newsletter-box">
+                          <input type="email" placeholder="Email Here...">
+                          <button title="Subscribe" class="btn-color">Subscribe</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+          <div class="row">
+            <div class="col-lg-4 col-md-12 ">
+              <div class="footer_social pt-xs-15 center-sm">
+                <ul class="social-icon">
+                  <li><a title="Facebook" class="facebook"><i class="fa fa-facebook"> </i></a></li>
+                  <li><a title="Twitter" class="twitter"><i class="fa fa-twitter"> </i></a></li>
+                  <li><a title="Linkedin" class="linkedin"><i class="fa fa-linkedin"> </i></a></li>
+                  <li><a title="RSS" class="rss"><i class="fa fa-rss"> </i></a></li>
+                  <li><a title="Pinterest" class="pinterest"><i class="fa fa-pinterest"> </i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12 align-center">
+              <div class="copy-right ">© 2017  All Rights Reserved. Design By <a href="#">Aaryaweb</a></div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+              <div class="payment">
+                <ul class="payment_icon">
+                  <li class="visa"><a><img src="images/pay1.png" alt="smart"></a></li>
+                  <li class="discover"><a><img src="images/pay2.png" alt="smart"></a></li>
+                  <li class="paypal"><a><img src="images/pay3.png" alt="smart"></a></li>
+                  <li class="vindicia"><a><img src="images/pay4.png" alt="smart"></a></li>
+                  <li class="atos"><a><img src="images/pay5.png" alt="smart"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-top">
+    <div id="scrollup"></div>
+  </div>
+  <!-- FOOTER END -->
+</div>
+<script src="/js/jquery-1.12.3.min.js"></script> 
+<script src="/js/bootstrap.min.js"></script>  
+<script src="/js/jquery-ui.min.js"></script> 
+<!-- <script src="/js/fotorama.js"></script>  -->
+<script src="/js/owl.carousel.min.js"></script> 
+<script src="/js/custom.js"></script>
 </body>
-
-    <script src="/js/jquery.js"></script>
-    <script src="/js/script.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
-
 </html>

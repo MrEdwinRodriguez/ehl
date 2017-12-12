@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Events, Tickets, concerts, shows, live">
+    <meta name="author" content="Edwin Rodriguez">
+
+    <title>Event Horizon</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="/css/bootstrap.min.css" rel="stylesheet"> -->
+     <link href="/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/sb-admin.css" rel="stylesheet">
+
+  
+
+</head>
+<body>
+
+    <div id="wrapper" id='buyer'>
+        
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Event Horizon Separate page no main layout (just for reminder)</a>
+                </div>
+            </div>
+        </nav>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h2>{{event.event_name}}</h2>      
+        <div class="row">
+          <div class="col-md-4"><img src="../uploads/{{event.event_flyer}}" style="width:275px;height:175px;"></div>
+            <div class="col-md-4">      
+                <h4>Date: {{event.event_date}}</h4>
+                <h4>Venue: {{event.event_venue}}</h4>
+                <h4>Time: {{event.event_time}}</h4> 
+                <h4>Address: {{event.event_address}} {{event.event_city}}, {{event.event_state}} {{event.event_zip}}</h4><h4>Price Online: {{event.online_price}}</h4>
+                <h4>Price at Door: {{event.door_price}}/h4> 
+            </div>
+          <div class="col-md-4">{{event.event_description}}</div>
+        </div>             
+        
+      </div>
+      <form class="form-horizontal testing">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Form Name</legend>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <div class="col-md-12">
+    <select id="selectbasic" name="selectbasic" class="form-control ticketAmount">
+      <option value="1">1 Ticket</option>
+      <option value="2">2 Tickets</option>
+      <option value="3">3 Ticket</option>
+      <option value="4">4 Tickets</option>
+      <option value="5">5 Ticket</option>
+      <option value="6">6 Tickets</option>
+      <option value="7">7 Ticket</option>
+      <option value="8">8 Tickets</option>                  
+    </select>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <div class="col-md-12">
+    <button id="singlebutton" name="buyTicket" class="btn btn-primary">Buy Tickets</button>
+  </div>
+</div>
+
+</fieldset>
+</form>     
+    </div>
+
+
+
+    </div>
+    <!-- /#wrapper -->
+
+
+
+</body>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/script.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+</html>
