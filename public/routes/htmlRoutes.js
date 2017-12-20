@@ -267,7 +267,38 @@ module.exports = function(app) {
 
 
 
-        });        
+        });   
+
+    app
+        .get('/events/details/:eventId/:promoterId/:eventName', function(req, res) {
+
+            var eventID = req.params.eventId
+            ctrlEvents.patronEventView(eventID, function(data) {
+
+                return data
+            }).then(function(event) {
+                console.log('hi')
+                // xonaolw.lof(event)
+                console.log(event[0])
+                res
+                    .status(200)
+                    .render('patronEvent', {
+                        layout: false, /**This line is important it will not render default layout with template */
+                        event: event[0],
+                        device: 'testing',
+                        id: req.session.client_id,
+                        first_name: req.session.first_name,
+                        last_name: req.session.last_name,
+                    });
+            })
+
+
+
+        }); 
+
+
+
+
 
     app
         .get('/events/createevent/flyer', function(req, res) {
