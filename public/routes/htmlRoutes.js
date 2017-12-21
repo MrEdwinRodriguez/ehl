@@ -283,7 +283,8 @@ module.exports = function(app) {
                 res
                     .status(200)
                     .render('patronEvent', {
-                        layout: false, /**This line is important it will not render default layout with template */
+                        // layout: false, /**This line is important it will not render default layout with template */
+                        layout: 'mainclient',
                         event: event[0],
                         device: 'testing',
                         id: req.session.client_id,

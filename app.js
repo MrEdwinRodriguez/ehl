@@ -20,7 +20,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
         return sequelizeConnection.sync()
     })
 
-  
+   
 app.set('port', 8000); 
 
  
