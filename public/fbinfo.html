@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>EHL-Facebook Client</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="author" content="Edwin Rodriguez">
+    <meta name="description" content="Event Horizon Live">
+    <meta name="keywords" content="events, tickets, purchase, live">
+<!--     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet"> -->
+</head>
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '173760749895086',
+      xfbml      : true,
+      version    : 'v2.11'
+    });
+       FB.AppEvents.logPageView();
+  };
+
+   (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+	
+
+	<!-- <h1>Facebook Client Page</h1> -->
+	<div id='status'>Hello</div>
+  <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+	
+</body>
+</html>
