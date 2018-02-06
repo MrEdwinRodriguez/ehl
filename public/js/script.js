@@ -14,13 +14,27 @@
     }
 
 
+console.log('test')
+
 $(document).ready(function() {
 
-    $('#dashboardTable').DataTable( {
-        responsive: true,
-        "pageLength": 10,
-        "lengthMenu": [ 10, 20, 50 ]
-    } );
+    // $('#dashboardTable').DataTable( {
+    //     "responsive": true,
+    //     "pageLength": 10,
+    //     "lengthMenu": [ 10, 20, 50 ]
+    // } );
 
+
+    $( "#addToCart" ).click(function() {
+        addedTotal = $("#qty").val();
+        addedTotal = parseInt(addedTotal)
+        currentTotal = $("#totalItems").text();
+        currentTotal = parseInt(currentTotal)
+        newTotal = addedTotal + currentTotal
+
+        
+        $("#totalItems").html(newTotal);
+    
+    });
    
 })     

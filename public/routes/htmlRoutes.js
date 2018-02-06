@@ -256,7 +256,8 @@ module.exports = function(app) {
                 res
                     .status(200)
                     .render('patronEvent', {
-                        layout: false, /**This line is important it will not render default layout with template */
+                        // layout: false, /**This line is important it will not render default layout with template */
+                        layout: 'mainclient',
                         event: event[0],
                         device: 'testing',
                         id: req.session.client_id,
@@ -298,6 +299,31 @@ module.exports = function(app) {
         }); 
 
 
+
+    app.get('/concerts', function(req, res) {
+            
+           
+
+            res
+                .status(200)
+                .render('shop', {
+                    layout: 'mainclient',
+                    first_name: "Edwin"
+                })
+
+        });  
+
+
+    app.get('/products', function(req, res) {
+            
+            res
+                .status(200)
+                .render('product', {
+                    layout: 'mainclient',
+                    first_name: "Edwin"
+                })
+
+        });  
 
 
 
@@ -397,5 +423,7 @@ module.exports = function(app) {
 
 
 }
+
+
 
 

@@ -27,6 +27,7 @@ var eventsCtrl = require('../controllers/events.controller.js');
 var clientCtrl = require('../controllers/client.controllers.js');
 var patronsCtrl = require('../controllers/patrons.controller.js');
 var ticketsCtrl = require('../controllers/tickets.controller.js');
+var facebookCtrl = require('../controllers/facebook.controller.js');
  
 //register client
 router
@@ -118,6 +119,10 @@ router
 router
     .route('/events/:eventId/tickets')
     .get(ticketsCtrl.ticketsForEvent);   
+
+router
+    .route('/facebookapi')
+    .get(facebookCtrl.facebookController);
 
 
 module.exports = router;
